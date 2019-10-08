@@ -6,19 +6,42 @@ import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import UserForm from '../UserForm/UserForm';
 
-import { getMovies } from '../../../src/apiCalls';
+// import { getMovies } from '../../../src/apiCalls';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      movies: []
     }
   }
 
+//   componentDidMount() {
+//     getMovies()
+//     .then(movies => this.setState({ movies: movies}))
+// console.log(this.state)
+//   }
+
   componentDidMount() {
-    return getMovies()
+    fetch('https://swapi.co/api/films/')
+    .then(res => res.json())
+    // .then(films => console.log(films))
+    .then(films => {
+      const allFilms = films.results.map(film => {
+      const { episode_id, title, release_date, opening_crawl, characters } = film;
+        return { 
+          episode_id, 
+          title, 
+          release_date, 
+          opening_crawl, 
+          characters 
+        }
+      })
+      console.log(allFilms)
+      this.setState({ movies: allFilms })
+    })
   }
+
 
   render() {
     return (
@@ -27,7 +50,7 @@ class App extends Component {
         <UserProfile />
         <main>
           <h1>SWAPI</h1>
-          <MoviesContainer />
+          <MoviesContainer movies={this.state.movies}/>
           <CharactersContainer />
           <FavoritesContainer />
         </main> 
