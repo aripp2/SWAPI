@@ -3,7 +3,7 @@ import './UserProfile.scss';
 
 const UserProfile = () => {
   return (
-
+      <header>User Profile</header>
     )
 }
 
