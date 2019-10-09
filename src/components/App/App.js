@@ -5,8 +5,8 @@ import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import UserForm from '../UserForm/UserForm';
+import { getMovies } from '../../apiCalls';
 
-// import { getMovies } from '../../../src/apiCalls';
 
 class App extends Component {
   constructor() {
@@ -23,33 +23,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/films/')
-    .then(res => res.json())
-    // .then(films => console.log(films))
-    .then(films => {
-      const allFilms = films.results.map(film => {
-      const { episode_id, title, release_date, opening_crawl, characters } = film;
-        return { 
-          episode_id, 
-          title, 
-          release_date, 
-          opening_crawl, 
-          characters 
-        }
-      })
-      console.log(allFilms)
-      this.setState({ movies: allFilms })
-    })
-  }
+    getMovies()
+      .then(allFilms => this.setState({ movies: allFilms }))
+    }
+  
 
 
   render() {
+    console.log(this.state.movies)
     return (
       <div>
         <UserForm user={this.state.user}/>
         <UserProfile />
         <main>
-          <h1>SWAPI</h1>
+          <h1>STAR WARS</h1>
           <MoviesContainer movies={this.state.movies}/>
           <CharactersContainer />
           <FavoritesContainer />
@@ -62,3 +49,34 @@ class App extends Component {
 
 
 export default App;
+
+
+
+
+// const getCharacters = characters => {
+//   console.log("in");
+//   const promises = characters.map(character => {
+//     return fetch(character)
+//       .then(res => res.json())
+//       .then(data => ({
+//         name: data.name,
+//         homeWorld: getHomeWorld(data.homeWorld),
+//         species: getSpecies(data.speies[0])
+//       }));
+//   });
+//   return Promise.all(promises);
+// };
+
+// const getHomeWorld = url => {
+//   return fetch(url)
+//     .then(res => res.json())
+//     .then(homeWorld => homeWorld);
+// };
+
+// const getSpecies = url => {
+//   return fetch(url)
+//     .then(res => res.json())
+//     .then(data => ({
+//       species: data.species[0]
+//     }));
+// };
