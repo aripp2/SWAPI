@@ -12,15 +12,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      user: {
+        name: '',
+        quote: '', 
+        level: '',
+        favorites: []
+      },
       movies: []
     }
   }
-
-//   componentDidMount() {
-//     getMovies()
-//     .then(movies => this.setState({ movies: movies}))
-// console.log(this.state)
-//   }
 
   componentDidMount() {
     fetch('https://swapi.co/api/films/')
@@ -46,7 +46,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <UserForm />
+        <UserForm user={this.state.user}/>
         <UserProfile />
         <main>
           <h1>SWAPI</h1>

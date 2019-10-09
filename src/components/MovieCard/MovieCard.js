@@ -1,6 +1,8 @@
 import React from 'react';
 import './MovieCard.scss';
 
+//should this be a class component so we can hold on to the charaters property as part of it's state and be able to fetch that data that is only specific to the movie card?
+
 const MovieCard = ({ id, title, date }) => {
   return (
       <div className="movie-card">
