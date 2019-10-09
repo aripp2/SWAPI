@@ -49,7 +49,7 @@ class App extends Component {
         <UserForm />
         <UserProfile />
         <main>
-          <h1>SWAPI</h1>
+          <h1>STAR WARS</h1>
           <MoviesContainer movies={this.state.movies}/>
           <CharactersContainer />
           <FavoritesContainer />
