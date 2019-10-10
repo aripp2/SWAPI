@@ -25,7 +25,8 @@ componentDidMount() {
       user: {
       name: this.state.name,
       quote: this.state.quote,
-      knowledgeLevel: this.state.knowledgeLevel
+      knowledgeLevel: this.state.knowledgeLevel,
+      favorites:[]
       }
     })
   }

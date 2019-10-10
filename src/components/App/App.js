@@ -13,7 +13,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      user: null
+      user: {}
 
     }
   }
@@ -29,8 +29,7 @@ class App extends Component {
   
 
   render() {
-    console.log(this.state.movies)
-    console.log("user", this.state.user)
+    console.log(this.state.user)
     return (
       <div>
         <UserForm submitUser={this.submitUser} />
