@@ -12,23 +12,29 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: []
+      movies: [],
+      user: null
+
     }
   }
-
 
   componentDidMount() {
     getMovies()
       .then(allFilms => this.setState({ movies: allFilms }))
     }
-  
 
+  submitUser = (user) => {
+    this.setState({user})
+  }
+  
 
   render() {
     console.log(this.state.movies)
+    console.log("user", this.state.user)
     return (
       <div>
-        <UserForm />
+        <UserForm submitUser={this.submitUser} />
+        
         <UserProfile />
         <main>
           <h1>STAR WARS</h1>
@@ -44,34 +50,3 @@ class App extends Component {
 
 
 export default App;
-
-
-
-
-// const getCharacters = characters => {
-//   console.log("in");
-//   const promises = characters.map(character => {
-//     return fetch(character)
-//       .then(res => res.json())
-//       .then(data => ({
-//         name: data.name,
-//         homeWorld: getHomeWorld(data.homeWorld),
-//         species: getSpecies(data.speies[0])
-//       }));
-//   });
-//   return Promise.all(promises);
-// };
-
-// const getHomeWorld = url => {
-//   return fetch(url)
-//     .then(res => res.json())
-//     .then(homeWorld => homeWorld);
-// };
-
-// const getSpecies = url => {
-//   return fetch(url)
-//     .then(res => res.json())
-//     .then(data => ({
-//       species: data.species[0]
-//     }));
-// };
