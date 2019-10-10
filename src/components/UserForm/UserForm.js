@@ -15,68 +15,64 @@ componentDidMount() {
     this.setState({ knowledgeLevel: 'Star What?' })
 }
 
-  handleNameChange = event => {
-    this.setState({ name: event.target.value });
-    console.log("name", this.state.name)
+  handleChange = event => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.props.submitUser({
+      user: {
+      name: this.state.name,
+      quote: this.state.quote,
+      knowledgeLevel: this.state.knowledgeLevel,
+      favorites:[]
       }
-
-  handleQuotesChange = event => {
-    this.setState( {quote: event.target.value} )
-    console.log("quote", this.state.quote)
+    })
   }
-
-  handleLevelChange = event => {
-    event.preventDefault()
-   this.setState({knowledgeLevel: event.target.value})
-    console.log('knowledge level', this.state.knowledgeLevel)
-  }
-
-  // handleFormSubmit = event => {
-
-  // }
-// 
-
   
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <div>
-          <label>Your Name?</label>
-          <input type="text" value={this.state.name} onChange={this.handleNameChange} />
+      <form className="user_form">
+        <div className="user_name-div">
+          <label className="user_name-label">Your Name?</label>
+          <input className="user_name-input" type="text" value={this.state.name} name="name" onChange={this.handleChange} />
         </div>
-        <div>
-          <label>Favorite SW Quote?</label>
-          <textarea value={this.state.quotes} onChange={this.handleQuotesChange} />
+        <div className="user_quote-div">
+          <label className="user_quote-label">Favorite SW Quote?</label>
+          <textarea className="user_quote-textarea" value={this.state.quote} name="quote" onChange={this.handleChange} />
         </div>
         {/* <label>How much do you love Star Wars?</label>
-        <select value={this.state.knowledgeLevel} onClick={this.handleLevelChange}>
+        <select value={this.state.knowledgeLevel} onClick={this.handleChange}>
           <option value="Star What?">Star What?</option>
           <option value="Jedi in Training?">Jedi in Training</option>
           <option value="My firtsborns name is yoda"> My firstborns name is Yoda</option>
-        </select> */} 
-        <div className="radio">
-          <label> 
-            <input type='radio' value='Star What?' checked={this.state.knowledgeLevel === 'Star What?'} 
-            onChange={this.handleLevelChange} /> 
+        </select>  */}
+        <div className="user_radio-div">
+          <label className="user_radio-label"> 
+            <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Star What?' 
+            onChange={this.handleChange} /> 
             Star What?
           </label>
         </div>
-        <div className="radio">
-          <label> 
-            <input type='radio' value='Jedi in Training?' checked={this.state.knowledgeLevel === 'Jedi in Training'} 
-            onChange={this.handleLevelChange} /> 
+        <div className="user_radio-div">
+          <label className="user_radio-label"> 
+            <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Jedi in Training?' 
+            
+            onChange={this.handleChange} /> 
             Jedi in Training
           </label>
         </div>
-        <div className="radio">
-          <label> 
-            <input type='radio' value='My firtsborns name is yoda' checked={this.state.knowledgeLevel === 'My firtsborns name is yoda'} 
-            onChange={this.handleLevelChange} /> 
+        <div className="user_radio-div">
+          <label className="user_radio-label"> 
+            <input className="user_radio-input" type='radio' name="knowledgeLevel" value='My firtsborns name is yoda' 
+            onChange={this.handleChange} /> 
             My Firstborns names is Yoda
           </label>
-        </div>
-        <button type="submit">SUBMIT</button>
+        </div> 
+        <button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>SUBMIT</button>
+
 
       </form>
       )

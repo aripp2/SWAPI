@@ -12,13 +12,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: {
-        name: '',
-        quote: '', 
-        level: '',
-        favorites: []
-      },
       movies: [],
+      user: {},
       selectedCharacters: []
     }
   }
@@ -26,6 +21,10 @@ class App extends Component {
   componentDidMount() {
     getMovies()
       .then(allFilms => this.setState({ movies: allFilms }))
+    }
+
+  submitUser = (user) => {
+    this.setState({user})
   }
   
   getCharacters = (charactersUrls) => {
@@ -34,10 +33,13 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.user)
     console.log('app state', this.state.selectedCharacters)
     return (
       <div>
-        <UserForm user={this.state.user}/>
+        <UserForm 
+        user={this.state.user}
+        submitUser={this.submitUser} />
         <UserProfile />
         <main>
           <h1>STAR WARS</h1>
@@ -53,6 +55,3 @@ class App extends Component {
 
 
 export default App;
-
-
-
