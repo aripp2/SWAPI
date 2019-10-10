@@ -18,22 +18,23 @@ class App extends Component {
         level: '',
         favorites: []
       },
-      movies: []
+      movies: [],
+      selectedCharacters: []
     }
   }
 
   componentDidMount() {
     getMovies()
       .then(allFilms => this.setState({ movies: allFilms }))
-    }
+  }
   
-  getCharacters(characters) {
-    fetchCharacters(characters)
-      .then(data => console.log("made it to app", data))
+  getCharacters = (charactersUrls) => {
+    fetchCharacters(charactersUrls)
+      .then(data => this.setState({ selectedCharacters: data}))
   }
 
   render() {
-    console.log(this.state.movies)
+    console.log('app state', this.state.selectedCharacters)
     return (
       <div>
         <UserForm user={this.state.user}/>

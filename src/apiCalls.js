@@ -15,36 +15,77 @@ export const getMovies = () => {
         }
       })  
   })
-}
+};
 
-export const fetchCharacters = characters => {
-  const firstTen = characters.slice(0, 10);
+export const fetchCharacters = charactersUrls => {
+  const firstTen = charactersUrls.slice(0, 10);
   const promises = firstTen.map(character => {
-  
     return fetch(character)
       .then(res => res.json())
-      .then(data => ({
-        name: data.name,
-        homeWorld: getHomeWorld(data.homeWorld),
-        species: getSpecies(data.species[0])
-      }));
+      .then(data => {
+        const { name, homeworld, species, films } = data;
+        const speciesType = getSpecies(species).then(type => type);
+        const homeworldName = getHomeworldName(homeworld).then(worldName => worldName);
+        const population = getHomeworldPop(homeworld).then(pop => pop);
+        const movies = getFilms(films).then(titles => titles);
+
+        const characterData = Promise.all([speciesType, homeworldName, population, movies])
+          .then(data => data)
+
+          // {
+          //   console.log("dataIn", data)
+          //   // const {  } = data;
+          //   // console.log('data', data)
+          //   // return ({[0]})
+          // })
+
+          console.log("dataCharacter", characterData)
+         
+ 
+          return {
+            name,
+            speciesType,
+            homeworldName,
+            population,
+            movies
+          }
+          
+      });
   });
+  console.log('promises', promises)
   return Promise.all(promises);
 };
 
-const getHomeWorld = url => {
-  return fetch(url)
+const getHomeworldName = homeworldUrl => {
+  return fetch(homeworldUrl)
     .then(res => res.json())
-    .then(data => console.log(data))
-    .then(homeWorld => homeWorld);
+    .then(homeworldInfo => homeworldInfo.name);
 };
 
-const getSpecies = url => {
-  return fetch(url)
+const getHomeworldPop = homeworldUrl => {
+  return fetch(homeworldUrl)
     .then(res => res.json())
-    .then(data => ({
-      species: data.species
-    }));
+    .then(homeworldInfo => homeworldInfo.population);
+}; 
+
+const getSpecies = speciesUrl => {
+  return fetch(speciesUrl)
+    .then(res => res.json())
+    .then(species => species.name);
 };
+
+const getFilms = (filmsUrls) => {
+  const filmsInfo = filmsUrls.map(film => {
+    return getTitle(film)
+      .then(filmTitle => filmTitle);
+  })
+  return Promise.all(filmsInfo);
+}
+
+const getTitle = (filmUrl) => {
+  return fetch(filmUrl)
+    .then(response => response.json())
+    .then(film => film.title);
+}
 
 
