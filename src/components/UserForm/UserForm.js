@@ -35,6 +35,7 @@ componentDidMount() {
   render() {
     return (
       <div className="user_profile-div">
+        <h1 className="user_profile-h1">Hello! </h1>
         <img className="user_profile-image" alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi" src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif" />
         <form className="user_form">
           <div className="user_name-div">
