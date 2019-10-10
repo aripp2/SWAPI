@@ -31,8 +31,8 @@ class App extends Component {
   getCharacters(charactersUrls) {
     fetchCharacters(charactersUrls)
       .then(data => console.log("made it to app", data))
+      // .then(data => Promise.all(data))
       .then(data => this.setState({ selectedCharacters: data}))
-     
   }
 
   render() {

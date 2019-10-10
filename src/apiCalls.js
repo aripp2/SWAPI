@@ -19,12 +19,9 @@ export const getMovies = () => {
 
 export const fetchCharacters = charactersUrls => {
   const firstTen = charactersUrls.slice(0, 10);
-  
   const promises = firstTen.map(character => {
-  
     return fetch(character)
       .then(res => res.json())
-      // .then(data => console.log(data))
       .then(data => {
         const { name, homeworld, species, films } = data
         const speciesType = getSpecies(species).then(type => type)
@@ -40,13 +37,13 @@ export const fetchCharacters = charactersUrls => {
           movies
         })
  
-        return {
-          name,
-          homeworldName,
-          population,
-          speciesType,
-          movies
-        }
+          return {
+            name,
+            homeworldName,
+            population,
+            speciesType,
+            movies
+          }
       });
   });
   console.log('promises', promises)
@@ -56,9 +53,8 @@ export const fetchCharacters = charactersUrls => {
 const getHomeworldName = homeworldUrl => {
   return fetch(homeworldUrl)
     .then(res => res.json())
-    // .then(data => console.log('home name', data))
+    // .then(data => console.log('home name', data.name))
     .then(homeworldInfo => homeworldInfo.name)
-
     // {
     //   const { name, population } = homeworldInfo;
     //   console.log({ name, population })
@@ -71,7 +67,6 @@ const getHomeworldPop = homeworldUrl => {
     .then(res => res.json())
     // .then(data => console.log('pop', data.population))
     .then(homeworldInfo => homeworldInfo.population)
-
 }; 
 
 const getSpecies = speciesUrl => {
