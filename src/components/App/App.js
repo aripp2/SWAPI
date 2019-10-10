@@ -18,7 +18,8 @@ class App extends Component {
         level: '',
         favorites: []
       },
-      movies: []
+      movies: [],
+      selectedCharacters: []
     }
   }
 
@@ -27,13 +28,14 @@ class App extends Component {
       .then(allFilms => this.setState({ movies: allFilms }))
     }
   
-  getCharacters(characters) {
-    fetchCharacters(characters)
+  getCharacters(charactersUrls) {
+    fetchCharacters(charactersUrls)
       .then(data => console.log("made it to app", data))
+      .then(data => this.setState({ selectedCharacters: data}))
+     
   }
 
   render() {
-    console.log(this.state.movies)
     return (
       <div>
         <UserForm user={this.state.user}/>
