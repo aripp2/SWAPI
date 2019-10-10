@@ -26,16 +26,15 @@ class App extends Component {
   componentDidMount() {
     getMovies()
       .then(allFilms => this.setState({ movies: allFilms }))
-    }
+  }
   
-  getCharacters(charactersUrls) {
+  getCharacters = (charactersUrls) => {
     fetchCharacters(charactersUrls)
-      .then(data => console.log("made it to app", data))
-      // .then(data => Promise.all(data))
       .then(data => this.setState({ selectedCharacters: data}))
   }
 
   render() {
+    console.log('app state', this.state.selectedCharacters)
     return (
       <div>
         <UserForm user={this.state.user}/>
