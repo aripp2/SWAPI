@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
+import { Route } from 'react-router-dom';
 import UserProfile from '../UserProfile/UserProfile';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
@@ -37,14 +38,14 @@ class App extends Component {
     console.log('app state', this.state.selectedCharacters)
     return (
       <div>
-        <UserForm 
-        user={this.state.user}
-        submitUser={this.submitUser} />
+        <Route exact path='/' render={() => <UserForm
+          user={this.state.user}
+          submitUser={this.submitUser} /> } />
         <UserProfile />
         <main>
           <h1>STAR WARS</h1>
-          <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters}/>
-          <CharactersContainer />
+          <Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters} /> } />
+        <Route exact path='/characters' render={() => <CharactersContainer />} />
           <FavoritesContainer />
         </main> 
       </div>

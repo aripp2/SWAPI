@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './UserForm.scss';
+
 
 class UserForm extends Component {
   constructor() {
@@ -20,7 +22,7 @@ componentDidMount() {
   }
 
   handleFormSubmit = event => {
-    event.preventDefault();
+    // event.preventDefault();
     this.props.submitUser({
       user: {
       name: this.state.name,
@@ -36,7 +38,7 @@ componentDidMount() {
       <div className="user_profile-div">
         <img className="user_profile-image" alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi" src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif" />
         <div className="user_profile-h1-div">
-          <h1 className="user_profile-h1">WELCOME SWAPI! </h1>
+          <h1 className="user_profile-h1">WELCOME TO SWAPI TRIVIA! </h1>
         </div>
         <form className="user_form">
           <div className="user_name-div">
@@ -69,7 +71,7 @@ componentDidMount() {
               My Firstborns names is Yoda
             </label>
           </div> 
-          <button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button>
+          <Link to='/movies'><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
         </form>
       </div>
       )
