@@ -2,12 +2,13 @@ import React from 'react';
 import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
-//This container will need to have access to the id and movie scroll text it was clicked from, I have a few thoughts we can discuss
+const CharactersContainer = ({ characters, movieInfo }) => {
+  //user movieInfo.opening_crawl to get text when we know where and how to use it
 
-const CharactersContainer = ({ characters }) => {
   const characterInfo = characters.map(character => {
     return <CharacterCard 
             key={character.name}
+            id={movieInfo.episode_id}
             name={character.name}
             homeworld={character.homeworld}
             population={character.population}
@@ -24,3 +25,4 @@ const CharactersContainer = ({ characters }) => {
 }
 
 export default CharactersContainer;
+

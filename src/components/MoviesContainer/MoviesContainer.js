@@ -3,6 +3,7 @@ import './MoviesContainer.scss';
 import MovieCard from '../MovieCard/MovieCard';
 
 const MoviesContainer = ({ movies, getCharacters }) => {
+  // console.log('movies info', movies)
   let sortedMovies = movies.sort((a, b) => a.episode_id - b.episode_id)
  
   const allMovies = sortedMovies.map(movie => {
@@ -23,3 +24,4 @@ const MoviesContainer = ({ movies, getCharacters }) => {
 }
 
 export default MoviesContainer;
+

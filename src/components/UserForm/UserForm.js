@@ -24,12 +24,10 @@ componentDidMount() {
   handleFormSubmit = event => {
     // event.preventDefault();
     this.props.submitUser({
-      user: {
       name: this.state.name,
       quote: this.state.quote,
       knowledgeLevel: this.state.knowledgeLevel,
       favorites:[]
-      }
     })
   }
   
