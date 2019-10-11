@@ -2,8 +2,8 @@ import React from 'react';
 import './CharacterCard.scss';
 
 const CharacterCard = ({ name, homeworld, population, species, films }) => {
-  const filmsList = films.map(film => {
-    return <li>{film}</li>
+  const filmsList = films.map((film, i) => {
+    return <li key={i}>{film}</li>
   })
   return (
       <div>

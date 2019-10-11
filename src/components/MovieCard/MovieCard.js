@@ -10,7 +10,7 @@ const MovieCard = ({ id, title, date, characters, getCharacters }) => {
           <h4 className="movie_card-title">{title}</h4>
           <h5>Released in {date}</h5>
         <Link to={`/movies/${id}`}><button className="movie_card-btn"
-        onClick={() => getCharacters(characters, id)}>View Characters
+        onClick={() => getCharacters(characters)}>View Characters
         </button></Link>
         </div>
       </div>

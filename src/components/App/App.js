@@ -14,8 +14,7 @@ class App extends Component {
     this.state = {
       movies: [],
       user: {},
-      selectedCharacters: [],
-      selctedMovie: {}
+      selectedCharacters: []
     }
   }
 
@@ -28,16 +27,13 @@ class App extends Component {
     this.setState({user})
   }
   
-  getCharacters = (charactersUrls, id) => {
-    this.setState({ selctedMovie: this.state.movies.find(movie => movie.episode_id === id)})
+  getCharacters = (charactersUrls) => {
     fetchCharacters(charactersUrls)
       .then(data => this.setState({ selectedCharacters: data}))
   }
 
   render() {
     console.log('user', this.state.user)
-    console.log('selected movie', this.state.selctedMovie)
-    // console.log('app state', this.state.selectedCharacters)
     return (
       <div>
         <Route exact path='/' render={() => <UserForm
@@ -47,8 +43,10 @@ class App extends Component {
           <h1>STAR WARS</h1>
           <UserProfile {...this.state.user}/>
           <Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters} /> } />
-          <Route exact path='/movies/:id' render={() => <CharactersContainer characters={this.state.selectedCharacters} 
-            movieInfo={this.state.selctedMovie} />} />
+          <Route exact path='/movies/:id' render={({ match }) => {
+            const selectedMovie = this.state.movies.find(movie => movie.episode_id === parseInt(match.params.id))
+            return (
+            <CharactersContainer characters={this.state.selectedCharacters} movieInfo={selectedMovie} />)}} />
         </main> 
       </div>
       )
