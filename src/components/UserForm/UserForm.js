@@ -36,7 +36,7 @@ componentDidMount() {
       <div className="user_profile-div">
         <img className="user_profile-image" alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi" src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif" />
         <div className="user_profile-h1-div">
-          <h1 className="user_profile-h1">WELCOME! </h1>
+          <h1 className="user_profile-h1">WELCOME SWAPI! </h1>
         </div>
         <form className="user_form">
           <div className="user_name-div">
