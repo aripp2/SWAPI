@@ -38,13 +38,13 @@ class App extends Component {
     return (
       <div>
         <UserForm 
-        user={this.state.user}
-        submitUser={this.submitUser} />
-        <UserProfile />
+          user={this.state.user}
+          submitUser={this.submitUser} />
+        <UserProfile user={this.state.user}/>
         <main>
           <h1>STAR WARS</h1>
           <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters}/>
-          <CharactersContainer />
+          <CharactersContainer characters={this.state.selectedCharacters}/>
           <FavoritesContainer />
         </main> 
       </div>
