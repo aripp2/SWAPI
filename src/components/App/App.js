@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './App.scss';
 import UserProfile from '../UserProfile/UserProfile';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
@@ -33,18 +34,18 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.user)
+    // console.log(this.state.user)
     console.log('app state', this.state.selectedCharacters)
     return (
       <div>
         <UserForm 
-        user={this.state.user}
-        submitUser={this.submitUser} />
-        <UserProfile />
+          user={this.state.user}
+          submitUser={this.submitUser} />
+        <UserProfile user={this.state.user}/>
         <main>
           <h1>STAR WARS</h1>
           <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters}/>
-          <CharactersContainer />
+          <CharactersContainer characters={this.state.selectedCharacters}/>
           <FavoritesContainer />
         </main> 
       </div>
