@@ -38,15 +38,14 @@ class App extends Component {
     console.log('app state', this.state.selectedCharacters)
     return (
       <div>
-        <UserForm 
+        <Route exact path='/' render={() => <UserForm
           user={this.state.user}
-          submitUser={this.submitUser} />
+          submitUser={this.submitUser} /> } />
         <UserProfile user={this.state.user}/>
         <main>
           <h1>STAR WARS</h1>
-          <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters}/>
-          <CharactersContainer characters={this.state.selectedCharacters}/>
-          <FavoritesContainer />
+          <Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters} /> } />
+          <Route exact path='/characters' render={() => <CharactersContainer characters={this.state.selectedCharacters} />} />
         </main> 
       </div>
       )
