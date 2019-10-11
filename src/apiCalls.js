@@ -24,35 +24,22 @@ export const fetchCharacters = charactersUrls => {
       .then(res => res.json())
       .then(data => {
         const { name, homeworld, species, films } = data;
-        const speciesType = getSpecies(species).then(type => type);
-        const homeworldName = getHomeworldName(homeworld).then(worldName => worldName);
-        const population = getHomeworldPop(homeworld).then(pop => pop);
-        const movies = getFilms(films).then(titles => titles);
+        let speciesType = getSpecies(species).then(type => type);
+        let homeworldName = getHomeworldName(homeworld).then(worldName => worldName);
+        let population = getHomeworldPop(homeworld).then(pop => pop);
+        let movies = getFilms(films).then(titles => titles);
 
         const characterData = Promise.all([speciesType, homeworldName, population, movies])
-          .then(data => data)
-
-          // {
-          //   console.log("dataIn", data)
-          //   // const {  } = data;
-          //   // console.log('data', data)
-          //   // return ({[0]})
-          // })
-
-          console.log("dataCharacter", characterData)
-         
- 
-          return {
-            name,
-            speciesType,
-            homeworldName,
-            population,
-            movies
-          }
+          .then(data => ({ 
+            name, 
+            speciesType: data[0], 
+            homeworldName: data[1], 
+            population: data[2], 
+            movies: data[3]}));
           
+          return (characterData)
       });
   });
-  console.log('promises', promises)
   return Promise.all(promises);
 };
 
