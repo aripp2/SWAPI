@@ -24,47 +24,30 @@ export const fetchCharacters = charactersUrls => {
       .then(data => {
         const { name, homeworld, species, films } = data;
         const speciesType = getSpecies(species).then(type => type);
-        const homeworldName = getHomeworldName(homeworld).then(worldName => worldName);
-        const population = getHomeworldPop(homeworld).then(pop => pop);
+        const homeworldInfo = getHomeworldInfo(homeworld).then(info => info);
         const movies = getFilms(films).then(titles => titles);
 
-        const characterData = Promise.all([speciesType, homeworldName, population, movies])
-          .then(data => data)
+        const characterData = Promise.all([speciesType, homeworldInfo, movies])
+          .then(data => ({ 
+            name, 
+            species: data[0],
+            homeworld: data[1].name,
+            population: data[1].population,
+            films: data[2]}));
 
-          // {
-          //   console.log("dataIn", data)
-          //   // const {  } = data;
-          //   // console.log('data', data)
-          //   // return ({[0]})
-          // })
-
-          console.log("dataCharacter", characterData)
-         
- 
-          return {
-            name,
-            speciesType,
-            homeworldName,
-            population,
-            movies
-          }
-          
+          return (characterData);
       });
   });
-  console.log('promises', promises)
   return Promise.all(promises);
 };
 
-const getHomeworldName = homeworldUrl => {
+const getHomeworldInfo = homeworldUrl => {
   return fetch(homeworldUrl)
     .then(res => res.json())
-    .then(homeworldInfo => homeworldInfo.name);
-};
-
-const getHomeworldPop = homeworldUrl => {
-  return fetch(homeworldUrl)
-    .then(res => res.json())
-    .then(homeworldInfo => homeworldInfo.population);
+    .then(info => {
+      const { name, population} = info;
+      return({name, population});
+    })
 }; 
 
 const getSpecies = speciesUrl => {
@@ -79,12 +62,12 @@ const getFilms = (filmsUrls) => {
       .then(filmTitle => filmTitle);
   })
   return Promise.all(filmsInfo);
-}
+};
 
 const getTitle = (filmUrl) => {
   return fetch(filmUrl)
     .then(response => response.json())
     .then(film => film.title);
-}
+};
 
 
