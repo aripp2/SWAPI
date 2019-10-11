@@ -38,11 +38,11 @@ componentDidMount() {
       <div className="user_profile-div">
         <img className="user_profile-image" alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi" src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif" />
         <div className="user_profile-h1-div">
-          <h1 className="user_profile-h1">WELCOME TO SWAPI TRIVIA! </h1>
+          <h1 className="user_profile-h1">WELCOME TO <br /> SWAPI TRIVIA! </h1>
         </div>
         <form className="user_form">
           <div className="user_name-div">
-            <label className="user_name-label">Your Name?</label>
+            <label className="user_name-label">Name</label>
             <input className="user_name-input" type="text" value={this.state.name} name="name" onChange={this.handleChange} />
           </div>
           <div className="user_quote-div">

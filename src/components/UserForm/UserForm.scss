@@ -61,12 +61,36 @@
   border-bottom: 1px solid black;
 }
 
+.user_quote-div, 
+.user_name-div {
+  position: relative;   
+}
+
+.user_quote-label {
+  position: absolute;
+  bottom: -20px;
+  right: -30px;
+  width: 160px;
+}
+
+.user_name-label {
+  position: absolute;
+  bottom: -20px;
+  right: 84px;
+}
+
+.user_quote-textarea,
 .user_name-input {
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid black;
+  width: 262px;
+  position: absolute;
+  top: 33px;
+  right: -140px; 
 }
+
 
 .user_profile-image {
 position: absolute;
