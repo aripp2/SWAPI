@@ -4,7 +4,7 @@ import './App.scss';
 import UserProfile from '../UserProfile/UserProfile';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
-import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
+
 import UserForm from '../UserForm/UserForm';
 import { getMovies, fetchCharacters } from '../../apiCalls';
 
