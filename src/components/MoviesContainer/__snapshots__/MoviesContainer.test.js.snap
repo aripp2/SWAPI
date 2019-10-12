@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MoviesContainer should match Snapshot 1`] = `undefined`;
+exports[`MoviesContainer should match Snapshot 1`] = `
+<section
+  className="MovieContainer"
+>
+  <MovieCard
+    date="1999-05-19"
+    getCharacters={[MockFunction]}
+    id={1}
+    key="1"
+    title="The Phantom Menace"
+  />
+  <MovieCard
+    date="2002-05-16"
+    getCharacters={[MockFunction]}
+    id={2}
+    key="2"
+    title="Attack of the Clones"
+  />
+</section>
+`;

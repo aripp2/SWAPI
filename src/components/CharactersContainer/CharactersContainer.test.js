@@ -5,13 +5,23 @@ import CharactersContainer from './CharactersContainer';
 
 describe('CharactersContainer', () => {
 
-  beforeEach(() => {
 
-  })
-
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<CharactersContainer />, div);
-    ReactDOM.unmountComponentAtNode(div);
+  it('should match snapshot', () => {
+    const wrapper = shallow(<CharactersContainer 
+      characters={[{ 
+      films: ["The Empire Strikes Back", "Attack of the Clones", "The Phantom Menace", "Revenge of the Sith", "Return of the Jedi", "A New Hope"],
+      homeworld: "Tatooine",
+      name: "C-3PO",
+      population: "200000",
+      species: "Droid"
+    },
+    {
+      films: ["The Empire Strikes Back", "Attack of the Clones", "The Phantom Menace", "Revenge of the Sith", "Return of the Jedi", "A New Hope", "The Force Awakens"],
+      homeworld: "Naboo",
+      name: "R2-D2",
+      population: "4500000000",
+      pecies: "Droid"
+    }]} /> )
+    expect(wrapper).toMatchSnapshot();
   });
 })
