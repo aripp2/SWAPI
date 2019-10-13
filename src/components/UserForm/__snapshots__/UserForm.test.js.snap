@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserForm should match snapshot 1`] = `
+<div
+  className="user_profile-div"
+>
+  <img
+    alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi"
+    className="user_profile-image"
+    src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif"
+  />
+  <div
+    className="user_profile-h1-div"
+  >
+    <h1
+      className="user_profile-h1"
+    >
+      WELCOME TO 
+      <br />
+       SWAPI TRIVIA! 
+    </h1>
+  </div>
+  <form
+    className="user_form"
+  >
+    <div
+      className="user_name-div"
+    >
+      <label
+        className="user_name-label"
+      >
+        Name
+      </label>
+      <input
+        className="user_name-input"
+        name="name"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="user_quote-div"
+    >
+      <label
+        className="user_quote-label"
+      >
+        Favorite SW Quote?
+      </label>
+      <textarea
+        className="user_quote-textarea"
+        name="quote"
+        onChange={[Function]}
+        value=""
+      />
+    </div>
+    <div
+      className="user_radio-btn-div"
+    >
+      <div
+        className="user_radio-div"
+      >
+        <label
+          className="user_radio-label"
+        >
+          <input
+            className="user_radio-input"
+            name="knowledgeLevel"
+            onChange={[Function]}
+            type="radio"
+            value="Star What?"
+          />
+          Star What?
+        </label>
+      </div>
+      <div
+        className="user_radio-div"
+      >
+        <label
+          className="user_radio-label"
+        >
+          <input
+            className="user_radio-input"
+            name="knowledgeLevel"
+            onChange={[Function]}
+            type="radio"
+            value="Jedi in Training?"
+          />
+          Jedi in Training
+        </label>
+      </div>
+      <div
+        className="user_radio-div"
+      >
+        <label
+          className="user_radio-label"
+        >
+          <input
+            className="user_radio-input"
+            name="knowledgeLevel"
+            onChange={[Function]}
+            type="radio"
+            value="My firtsborns name is yoda"
+          />
+          My Firstborns names is Yoda
+        </label>
+      </div>
+    </div>
+    <Link
+      to="/movies"
+    >
+      <button
+        className="user-submit-btn"
+        onClick={[Function]}
+        type="submit"
+      >
+        ENTER
+      </button>
+    </Link>
+  </form>
+</div>
+`;

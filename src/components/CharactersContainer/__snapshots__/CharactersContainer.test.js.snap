@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharactersContainer should match snapshot 1`] = `
+<section>
+  <CharacterCard
+    films={
+      Array [
+        "The Empire Strikes Back",
+        "Attack of the Clones",
+        "The Phantom Menace",
+        "Revenge of the Sith",
+        "Return of the Jedi",
+        "A New Hope",
+      ]
+    }
+    homeworld="Tatooine"
+    key="C-3PO"
+    name="C-3PO"
+    population="200000"
+    species="Droid"
+  />
+  <CharacterCard
+    films={
+      Array [
+        "The Empire Strikes Back",
+        "Attack of the Clones",
+        "The Phantom Menace",
+        "Revenge of the Sith",
+        "Return of the Jedi",
+        "A New Hope",
+        "The Force Awakens",
+      ]
+    }
+    homeworld="Naboo"
+    key="R2-D2"
+    name="R2-D2"
+    population="4500000000"
+  />
+</section>
+`;

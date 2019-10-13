@@ -3,6 +3,8 @@ import './MovieCard.scss';
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ id, title, date, characters, getCharacters }) => {
+console.log("characters", characters)
+
   const splitDate = date.split('-')
   let fixedDate = `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`
   const convert = (num) => {
