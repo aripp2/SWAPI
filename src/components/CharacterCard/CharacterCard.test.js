@@ -5,7 +5,7 @@ import CharacterCard from './CharacterCard'
 describe('CharacterCard', () => {
 
   it('should match snapshot', () => {
-    const wrapper = <CharacterCard characters={ [
+    const wrapper = shallow(<CharacterCard characters={ [
         {
           films: [
             'The Empire Strikes Back',
@@ -33,9 +33,9 @@ describe('CharacterCard', () => {
           homeworld: 'Naboo',
           name: 'R2-D2',
           population: '4500000000',
-          pecies: 'Droid'
+          species: 'Droid'
         }
-      ]} /> 
+    ]} /> )
 
     expect(wrapper).toMatchSnapshot(); 
   })
