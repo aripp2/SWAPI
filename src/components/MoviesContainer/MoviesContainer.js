@@ -23,3 +23,4 @@ const MoviesContainer = ({ movies, getCharacters }) => {
 }
 
 export default MoviesContainer;
+

@@ -13,9 +13,9 @@ class UserForm extends Component {
     }
   }
 
-componentDidMount() {
-    this.setState({ knowledgeLevel: 'Star What?' })
-}
+// componentDidMount() {
+//     this.setState({ knowledgeLevel: 'Star What?' })
+// }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value})
@@ -24,12 +24,9 @@ componentDidMount() {
   handleFormSubmit = event => {
     // event.preventDefault();
     this.props.submitUser({
-      user: {
       name: this.state.name,
       quote: this.state.quote,
-      knowledgeLevel: this.state.knowledgeLevel,
-      favorites:[]
-      }
+      knowledgeLevel: this.state.knowledgeLevel
     })
   }
   
@@ -68,7 +65,7 @@ componentDidMount() {
             <label className="user_radio-label"> 
               <input className="user_radio-input" type='radio' name="knowledgeLevel" value='My firtsborns name is yoda' 
               onChange={this.handleChange} /> 
-              My Firstborns names is Yoda
+              My Firstborns name is Yoda
             </label>
           </div> 
           <Link to='/movies'><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
