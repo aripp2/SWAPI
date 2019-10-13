@@ -1,0 +1,113 @@
+@keyframes logo {
+  from {
+    width: 100%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    width: 0%;
+    opacity: 0;
+  }
+}
+@keyframes farfar {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes swcrawl {
+    0% {
+      transform: rotatex(45deg) translateY(470px);
+      opacity: 1;
+  }
+    25% {
+      opacity: 1;
+    }
+      65% {
+        opacity: 1;
+      }
+    100% {
+      opacity: 0;
+      transform: rotatex(45deg) translateY(-50px);}
+}
+
+header { 
+  height: 300px;               
+  background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
+  color: #E6CA3A;
+  overflow: hidden;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+    & .away {
+      margin: auto;
+      animation-duration: 4s;
+      animation-delay: 5s;
+      animation-name: farfar;
+      opacity: 0;
+      width: 350px;
+      display: block;
+      text-indent: 0;
+      padding-top: 25%;
+      position: absolute;
+      font-weight: normal;
+    }
+    & .logo {
+      margin: auto;
+      text-align: center;
+      padding-top: 125px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+    }
+    & > div > img {
+      width: 100%;
+      opacity: 0;
+      animation-name: logo;
+      animation-duration: 15s;
+    }
+    & > .fall {
+      width: 650px;
+      font-family: 'Franklin Gothic   Book',sans-serif;
+      font-size: 32px;
+      line-height: 50px;
+      text-indent: 50px;
+      margin: auto;
+      text-align: justify;
+      perspective: 400px;
+      font-weight: bold;
+    
+      & > p {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        text-align: justify;
+        animation-name: swcrawl;
+        animation-delay: 5s;
+        animation-duration: 15s;
+        opacity: 0;
+      
+        & > i {
+          text-align: left;
+          display: block;
+          width: 100%;
+          font-size: 42px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+}

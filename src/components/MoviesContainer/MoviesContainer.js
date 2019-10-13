@@ -16,7 +16,7 @@ const MoviesContainer = ({ movies, getCharacters }) => {
     />
   })
   return (
-      <section className="MovieContainer">
+      <section className="MovieContainer container">
         { allMovies }
       </section>
     )

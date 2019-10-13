@@ -65,7 +65,6 @@ class App extends Component {
           user={user}
           submitUser={this.submitUser} /> } />
         <main>
-          <h1>STAR WARS</h1>
           {haveUser && <UserProfile {...user} favorites={favorites}/>}
           <Route exact path='/movies' render={() => <MoviesContainer movies={movies} getCharacters={this.getCharacters} /> } />
           <Route exact path='/movies/:id' render={({ match }) => {
