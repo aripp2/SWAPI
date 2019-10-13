@@ -40,13 +40,13 @@ describe('CharacterCard', () => {
     expect(wrapper).toMatchSnapshot(); 
   })
 
-    it('should return an li of the ', () => {
-      const expected = "The Phantom Menace"
-      const mockFunction= jest.fn()
-      const wrapper = <CharacterCard characters={[{ name: "C-3PO", species: "Droid", homeworld: "Tatooine", population: "200000", films: ["The Phantom Menace"]}] }/>
+    // it('should return an li of the ', () => {
+    //   const expected = "The Phantom Menace"
+    //   const mockFunction= jest.fn()
+    //   const wrapper = <CharacterCard characters={[{ name: "C-3PO", species: "Droid", homeworld: "Tatooine", population: "200000", films: ["The Phantom Menace"]}] }/>
         
-      expect(mockFunction()).toEqual(expected)
-      })
+    //   expect(mockFunction()).toEqual(expected)
+    //   })
 
 })
 
