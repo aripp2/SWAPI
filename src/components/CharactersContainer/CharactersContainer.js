@@ -4,7 +4,8 @@ import CharacterCard from '../CharacterCard/CharacterCard';
 
 const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
   //user movieInfo.opening_crawl to get text when we know where and how to use it
-
+  
+  console.log("characters", characters)
   const characterInfo = characters.map((character) => {
     return <CharacterCard 
             key={character.name}
