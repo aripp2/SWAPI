@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 //should this be a class component so we can hold on to the charaters property as part of it's state and be able to fetch that data that is only specific to the movie card?
 
 const MovieCard = ({ id, title, date, characters, getCharacters }) => {
+  console.log("characters", characters)
   return (
       <div className="movie_card">
         <div className="movie_card-style">
