@@ -1,7 +1,8 @@
 import React from 'react';
 import './CharacterCard.scss';
 
-const CharacterCard = ({ name, homeworld, population, species, films }) => {
+const CharacterCard = ({ name, homeworld, population, species, films, updateFavs }) => {
+  const character = { name, homeworld, population, species, films }
   const filmsList = films.map((film, i) => {
     return <li key={i}>{film}</li>
   })
@@ -15,7 +16,9 @@ const CharacterCard = ({ name, homeworld, population, species, films }) => {
           <ul>
             {filmsList}
           </ul>
-        <button>Favorite</button>
+        <button
+          onClick={() => updateFavs(character)}
+        >Favorite</button>
       </div>
     )
 }

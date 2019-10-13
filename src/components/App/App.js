@@ -12,47 +12,77 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
       user: {},
-      selectedCharacters: []
+      movies: [],
+      selectedCharacters: [],
+      favorites: [],
+      haveUser: false,
+      isLoading: true,
+      error: ''
     }
   }
 
   componentDidMount() {
     getMovies()
-      .then(allFilms => this.setState({ movies: allFilms }))
+      .then(allFilms => this.setState({ movies: allFilms, isLoading: false }))
+      .catch(error => this.setState({ error: 'Something is wrong in the universe'}))
     }
 
   submitUser = (user) => {
-    this.setState({user})
+    this.setState({user, haveUser: true })
   }
   
   getCharacters = (charactersUrls) => {
     fetchCharacters(charactersUrls)
-      .then(data => this.setState({ selectedCharacters: data}))
+      .then(data => this.setState({ selectedCharacters: data, isLoading: false }))
+      .catch(error => this.setState({ error: 'Something is wrong in the universe'}))
+  }
+
+  addFavorite = (character) => {
+    const { favorites } = this.state
+    const updatedFavs = [...favorites, character]
+      this.setState({ favorites: updatedFavs })
+  }
+
+  removeFavorite = (character) => {
+    const { favorites } = this.state
+    const updatedFavs = favorites.filter(fav => fav.name !== character.name)
+    this.setState({ favorites: updatedFavs })
+  }
+
+  updateFavs = (character) => {
+    const { favorites } = this.state
+    const names = favorites.map(fav => fav.name)
+     names.includes(character.name) ? this.removeFavorite(character) : this.addFavorite(character)
   }
 
   render() {
-    console.log('user', this.state.user)
+    const { user, movies, selectedCharacters, favorites, haveUser, isLoading, error } = this.state;
+    
     return (
       <div>
         <Route exact path='/' render={() => <UserForm
-          user={this.state.user}
+          user={user}
           submitUser={this.submitUser} /> } />
         <main>
           <h1>STAR WARS</h1>
-          <UserProfile {...this.state.user}/>
-          <Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} getCharacters={this.getCharacters} /> } />
+          {haveUser && <UserProfile {...user} favorites={favorites}/>}
+          <Route exact path='/movies' render={() => <MoviesContainer movies={movies} getCharacters={this.getCharacters} /> } />
           <Route exact path='/movies/:id' render={({ match }) => {
-            const selectedMovie = this.state.movies.find(movie => movie.episode_id === parseInt(match.params.id))
+            const selectedMovie = movies.find(movie => movie.episode_id === parseInt(match.params.id))
             return (
-            <CharactersContainer characters={this.state.selectedCharacters} movieInfo={selectedMovie} />)}} />
+            <CharactersContainer 
+              characters={selectedCharacters}
+              updateFavs={this.updateFavs} 
+              movieInfo={selectedMovie} />)}} />
+            <Route exact path='/favorites' render={() => <CharactersContainer 
+              characters={favorites}
+              updateFavs={this.updateFavs}
+              movieInfo={movies[0]}  />} />
         </main> 
       </div>
-      )
+    )
   }
 }
-
-
 
 export default App;
