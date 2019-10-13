@@ -19,7 +19,7 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
   })
 
   return (
-      <section>
+      <section className='character-container'>
         {characterInfo}
       </section>
     )
