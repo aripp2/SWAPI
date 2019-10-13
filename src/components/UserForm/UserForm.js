@@ -69,6 +69,7 @@ class UserForm extends Component {
               </label>
             </div> 
           </div>
+          <Link to='/movies'><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
         </form>
       </div>
       )
