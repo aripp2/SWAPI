@@ -1,3 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CharacterCard should match snapshot 1`] = `<CharacterCard />`;
+exports[`CharacterCard should match snapshot 1`] = `
+<CharacterCard
+  characters={
+    Array [
+      Object {
+        "films": Array [
+          "The Empire Strikes Back",
+          "Attack of the Clones",
+          "The Phantom Menace",
+          "Revenge of the Sith",
+          "Return of the Jedi",
+          "A New Hope",
+        ],
+        "homeworld": "Tatooine",
+        "name": "C-3PO",
+        "population": "200000",
+        "species": "Droid",
+      },
+      Object {
+        "films": Array [
+          "The Empire Strikes Back",
+          "Attack of the Clones",
+          "The Phantom Menace",
+          "Revenge of the Sith",
+          "Return of the Jedi",
+          "A New Hope",
+          "The Force Awakens",
+        ],
+        "homeworld": "Naboo",
+        "name": "R2-D2",
+        "pecies": "Droid",
+        "population": "4500000000",
+      },
+    ]
+  }
+/>
+`;

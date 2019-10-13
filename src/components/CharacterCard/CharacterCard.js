@@ -5,9 +5,9 @@ import './CharacterCard.scss';
 
 
 const CharacterCard = ({ name, homeworld, population, species, films }) => {
-  // const filmsList = films.map(film => {
-  //   return <li>film</li>
-  // })
+  const filmsList = films.map((film, i) => {
+    return <li key={i}>{film}</li>
+  })
   return (
       <div>
         <h3>{name}</h3>
@@ -16,7 +16,7 @@ const CharacterCard = ({ name, homeworld, population, species, films }) => {
         <h4>Species: {species}</h4>
         <h4>Related Films: </h4>
           <ul>
-            <li>Films will go here</li>
+            <li>{filmsList}</li>
           </ul>
         <button>Favorite</button>
       </div>
