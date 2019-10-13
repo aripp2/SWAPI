@@ -1,17 +1,25 @@
 import React from 'react';
 import './MovieCard.scss';
 import { Link } from 'react-router-dom';
-//should this be a class component so we can hold on to the charaters property as part of it's state and be able to fetch that data that is only specific to the movie card?
 
 const MovieCard = ({ id, title, date, characters, getCharacters }) => {
-  console.log("characters", characters)
+console.log("characters", characters)
+
+  const splitDate = date.split('-')
+  let fixedDate = `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`
+  const convert = (num) => {
+    if(num < 1) {return ''}
+    if (num >= 4){return 'IV' + convert(num - 4)}
+    if (num >= 1){return 'I' + convert(num - 1)}
+  }
+  const roman = convert(id)
   return (
       <div className="movie_card">
         <div className="movie_card-style">
-          <h3 className="episode" >Episode {id}</h3>
+          <h3 className="episode" >Episode {roman}</h3>
           <h4 className="movie_card-title">{title}</h4>
-          <h5>Released in {date}</h5>
-        <Link to='/characters'><button className="movie_card-btn"
+          <h5>Released on {fixedDate}</h5>
+        <Link to={`/movies/${id}`}><button className="movie_card-btn"
         onClick={() => getCharacters(characters)}>View Characters
         </button></Link>
         </div>

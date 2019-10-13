@@ -3,8 +3,8 @@ import './CharacterCard.scss';
 
 // we can not append the films yet, since by default there is no value it breaks since it can't map. Once we have our routes set up that will take care of the "conditional rendering so that we can use the map to append the films as <li>'s"
 
-
-const CharacterCard = ({ name, homeworld, population, species, films }) => {
+const CharacterCard = ({ name, homeworld, population, species, films, updateFavs }) => {
+  const character = { name, homeworld, population, species, films }
   const filmsList = films.map((film, i) => {
     return <li key={i}>{film}</li>
   })
@@ -18,9 +18,12 @@ const CharacterCard = ({ name, homeworld, population, species, films }) => {
           <ul>
             <li>{filmsList}</li>
           </ul>
-        <button>Favorite</button>
+        <button
+          onClick={() => updateFavs(character)}
+        >Favorite</button>
       </div>
     )
 }
 
 export default CharacterCard;
+

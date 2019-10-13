@@ -13,9 +13,9 @@ class UserForm extends Component {
     }
   }
 
-componentDidMount() {
-    this.setState({ knowledgeLevel: 'Star What?' })
-}
+// componentDidMount() {
+//     this.setState({ knowledgeLevel: 'Star What?' })
+// }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value})
@@ -24,12 +24,9 @@ componentDidMount() {
   handleFormSubmit = event => {
     // event.preventDefault();
     this.props.submitUser({
-      user: {
       name: this.state.name,
       quote: this.state.quote,
-      knowledgeLevel: this.state.knowledgeLevel,
-      favorites:[]
-      }
+      knowledgeLevel: this.state.knowledgeLevel
     })
   }
   
@@ -71,8 +68,7 @@ componentDidMount() {
                 My Firstborns names is Yoda
               </label>
             </div> 
-          </div>
-            <Link to='/movies'><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
+          {/* </div> */}
         </form>
       </div>
       )
