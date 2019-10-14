@@ -4,22 +4,6 @@ import CharacterCard from './CharacterCard'
 
 describe('CharacterCard', () => {
 
-//   beforeEach(()=> {
-//     const mockData = {
-//           films: [
-//             'The Empire Strikes Back',
-//             'Attack of the Clones',
-//             'The Phantom Menace',
-//             'Revenge of the Sith',
-//             'Return of the Jedi',
-//             'A New Hope'
-//           ],
-//           homeworld: 'Tatooine',
-//           name: 'C-3PO',
-//           population: '200000',
-//           species: 'Droid'
-//         }
-// })
 
   it('should match snapshot', () => {
     
@@ -35,7 +19,8 @@ describe('CharacterCard', () => {
             'The Phantom Menace',
             'Revenge of the Sith',
             'Return of the Jedi',
-            'A New Hope']}
+            'A New Hope'
+          ]}
       updateFavs={jest.fn()}
     /> )
 

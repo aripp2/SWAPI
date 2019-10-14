@@ -18,7 +18,7 @@ const CharacterCard = ({ name, homeworld, population, species, films, updateFavs
           <ul className="CharacterCard_films-ul">
             {filmsList}
           </ul>
-        <button className="CharacterCard_character-btn"
+        <button
           onClick={() => updateFavs(character)}
         >Favorite</button>
       </div>

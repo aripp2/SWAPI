@@ -7,6 +7,9 @@ exports[`App should match the Snapshot 1`] = `
     path="/"
     render={[Function]}
   />
+  <UserProfile
+    user={Object {}}
+  />
   <main>
     <h1>
       STAR WARS
@@ -19,12 +22,7 @@ exports[`App should match the Snapshot 1`] = `
     // put in loading?
     <Route
       exact={true}
-      path="/movies/:id"
-      render={[Function]}
-    />
-    <Route
-      exact={true}
-      path="/favorites"
+      path="/characters"
       render={[Function]}
     />
   </main>
