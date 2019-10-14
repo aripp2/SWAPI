@@ -62,12 +62,12 @@ class App extends Component {
     return (
       <div>
         <Route exact path='/' render={() => <UserForm
-          user={user}
           submitUser={this.submitUser} /> } />
         <main>
           <h1>STAR WARS</h1>
           {haveUser && <UserProfile {...user} favorites={favorites}/>}
           <Route exact path='/movies' render={() => <MoviesContainer movies={movies} getCharacters={this.getCharacters} /> } />
+          // put in loading? 
           <Route exact path='/movies/:id' render={({ match }) => {
             const selectedMovie = movies.find(movie => movie.episode_id === parseInt(match.params.id))
             return (

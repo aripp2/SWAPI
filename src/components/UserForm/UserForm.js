@@ -41,30 +41,30 @@ class UserForm extends Component {
         <form className="user_form">
           <div className="user_name-div">
             <label className="user_name-label">Name</label>
-            <input className="user_name-input" type="text" value={this.state.name} name="name" onChange={this.handleChange} />
+            <input className="user_name-input" type="text" value={this.state.name} name="name" onChange={(event) => this.handleChange(event)} />
           </div>
           <div className="user_quote-div">
             <label className="user_quote-label">Favorite SW Quote?</label>
-            <textarea className="user_quote-textarea" value={this.state.quote} name="quote" onChange={this.handleChange} />
+            <textarea className="user_quote-textarea" value={this.state.quote} name="quote" onChange={(event) => this.handleChange(event)} />
           </div>
           <div className="user_radio-btn-div">
             <div className="user_radio-div">
               <label className="user_radio-label"> 
                 <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Star What?' 
-                  onChange={this.handleChange} /> 
+                  onChange={(event) => this.handleChange(event)} /> 
                 Star What?
               </label>
             </div>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
-                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Jedi in Training?'        onChange={this.handleChange} /> 
+                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Jedi in Training?'        onChange={(event) => this.handleChange(event)} /> 
                 Jedi in Training
               </label>
             </div>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
                 <input className="user_radio-input" type='radio' name="knowledgeLevel" value='My firtsborns name is yoda' 
-                onChange={this.handleChange} /> 
+                onChange={(event) => this.handleChange(event)} /> 
                 My Firstborns names is Yoda
               </label>
             </div> 
