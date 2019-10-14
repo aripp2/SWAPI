@@ -4,7 +4,7 @@ import MovieCard from '../MovieCard/MovieCard';
 
 const MoviesContainer = ({ movies, getCharacters, isLoading }) => {
   let sortedMovies = movies.sort((a, b) => a.episode_id - b.episode_id)
- console.log(movies)
+
   const allMovies = sortedMovies.map((movie, i) => {
     return <MovieCard
       key={i}
@@ -13,8 +13,9 @@ const MoviesContainer = ({ movies, getCharacters, isLoading }) => {
       date={movie.release_date}
       characters={movie.characters}
       getCharacters={getCharacters}
-    />
-  })
+      />
+    })
+
   return (
       <section className="MovieContainer">
         {isLoading && <img src="https://miro.medium.com/max/1600/1*jfvE2OewojuD1gzO_RFC7A.gif" alt=""/> }
