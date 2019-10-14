@@ -3,7 +3,7 @@
 $title-font: 'Luckiest Guy', cursive;
 
 
-h1{
+h1 {
   font-family: $title-font;
   letter-spacing: 2px;
 }
@@ -29,4 +29,13 @@ h1{
 
 .App-link {
   color: #09d3ac;
+}
+
+.container {
+  height: 300px;
+  width: 80%;
+}
+
+main {
+  display: flex;
 }

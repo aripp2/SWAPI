@@ -1,6 +1,120 @@
+@keyframes title {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes farfar {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes swcrawl {
+  0% {
+    transform: rotatex(30deg) translateY(300px);
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotatex(30deg) translateY(-350px);
+  }
+}
+
+header { 
+  height: 300px;
+  width: 100%;               
+  background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
+  color: #E6CA3A;
+  overflow: hidden;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+    & .away {
+      margin: auto;
+      animation-duration: 5s;
+      animation-delay: 1s;
+      animation-name: farfar;
+      opacity: 0;
+      width: 350px;
+      display: block;
+      text-indent: 0;
+      padding-top: 25%;
+      position: absolute;
+      font-weight: normal;
+    }
+    & .title {
+      font-size: 3em;
+      font-weight: 700;
+      margin: auto;
+      text-align: center;
+      padding-top: 125px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+    // }
+    
+    // & > div > img {
+      width: 100%;
+      opacity: 1;
+      animation-name: title;
+      animation-delay: 20s;
+      animation-duration: 15s;
+    }
+    & > .fall {
+      width: 600px;
+      font-family: 'Franklin Gothic   Book',sans-serif;
+      font-size: 32px;
+      line-height: 50px;
+      text-indent: 50px;
+      margin: auto;
+      text-align: justify;
+      perspective: 400px;
+      font-weight: bold;
+    
+      & > p {
+        margin: auto;
+        width: 100%;
+        height: 50%;
+        text-align: justify;
+        animation-name: swcrawl;
+        animation-delay: 5s;
+        animation-duration: 15s;
+        opacity: 0;
+      }
+    }
+}
 
 .characterContainer_section {
   display: flex; 
   flex-wrap: wrap; 
   position: relative; 
 }
+
