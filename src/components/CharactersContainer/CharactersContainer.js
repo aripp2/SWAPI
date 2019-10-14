@@ -20,9 +20,8 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
   return (
       <section className='character-container container'>
         <header className='scroll'>  
-          <div className="logo">
-            <img src="http://vignette1.wikia.nocookie.net/disney/images/8/8b/Starwars-logo.png/revision/latest?cb=20141129122237" alt='space background'/>
-          </div>
+          <h2 className="title">{movieInfo.title}</h2>
+
           <div className="fall">
             <div className="away">A long time ago in a galaxy far, far away...
             </div>
@@ -35,4 +34,9 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
 }
 
 export default CharactersContainer;
+
+          // <div className="title">
+            // <img src="http://vignette1.wikia.nocookie.net/disney/images/8/8b/Starwars-logo.png/revision/latest?cb=20141129122237" alt='space background'/>
+          // }
+          // </div>
 

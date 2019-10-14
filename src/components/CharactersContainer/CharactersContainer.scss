@@ -1,16 +1,17 @@
-@keyframes logo {
+@keyframes title {
   from {
-    width: 100%;
-    opacity: 1;
+    width: 0%;
+    opacity: 0;
   }
   90% {
     opacity: 1;
   }
   to {
-    width: 0%;
-    opacity: 0;
+    width: 100%;
+    opacity: 1;
   }
 }
+
 @keyframes farfar {
   0% {
     opacity: 0;
@@ -25,27 +26,29 @@
     opacity: 0;
   }
 }
+
 @keyframes swcrawl {
-    0% {
-      transform: rotatex(30deg) translateY(470px);
-      opacity: 1;
+  0% {
+    transform: rotatex(30deg) translateY(300px);
+    opacity: 1;
   }
-    25% {
-      opacity: 1;
-    }
-      65% {
-        opacity: 1;
-      }
-    100% {
-      opacity: 1;
-      transform: rotatex(30deg) translateY(-50px);}
+  25% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotatex(30deg) translateY(-350px);
+  }
 }
 
 header { 
   height: 300px;               
   background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
   color: #E6CA3A;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .scroll {
@@ -54,8 +57,8 @@ header {
   top: 0;
     & .away {
       margin: auto;
-      animation-duration: 4s;
-      animation-delay: 6s;
+      animation-duration: 5s;
+      animation-delay: 1s;
       animation-name: farfar;
       opacity: 0;
       width: 350px;
@@ -65,7 +68,9 @@ header {
       position: absolute;
       font-weight: normal;
     }
-    & .logo {
+    & .title {
+      font-size: 3em;
+      font-weight: 700;
       margin: auto;
       text-align: center;
       padding-top: 125px;
@@ -73,15 +78,17 @@ header {
       display: block;
       position: absolute;
       top: 0;
-    }
-    & > div > img {
+    // }
+    
+    // & > div > img {
       width: 100%;
-      opacity: 0;
-      animation-name: logo;
+      opacity: 1;
+      animation-name: title;
+      animation-delay: 20s;
       animation-duration: 15s;
     }
     & > .fall {
-      width: 650px;
+      width: 600px;
       font-family: 'Franklin Gothic   Book',sans-serif;
       font-size: 32px;
       line-height: 50px;
@@ -94,20 +101,12 @@ header {
       & > p {
         margin: auto;
         width: 100%;
-        height: 100%;
+        height: 50%;
         text-align: justify;
         animation-name: swcrawl;
         animation-delay: 5s;
         animation-duration: 15s;
         opacity: 0;
-      
-        & > i {
-          text-align: left;
-          display: block;
-          width: 100%;
-          font-size: 42px;
-          margin-bottom: 30px;
-        }
       }
     }
 }
