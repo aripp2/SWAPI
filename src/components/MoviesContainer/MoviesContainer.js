@@ -2,7 +2,7 @@ import React from 'react';
 import './MoviesContainer.scss';
 import MovieCard from '../MovieCard/MovieCard';
 
-const MoviesContainer = ({ movies, getCharacters }) => {
+const MoviesContainer = ({ movies, getCharacters, isLoading }) => {
   let sortedMovies = movies.sort((a, b) => a.episode_id - b.episode_id)
  console.log(movies)
   const allMovies = sortedMovies.map((movie, i) => {
@@ -17,6 +17,7 @@ const MoviesContainer = ({ movies, getCharacters }) => {
   })
   return (
       <section className="MovieContainer">
+        {isLoading && <img src="https://miro.medium.com/max/1600/1*jfvE2OewojuD1gzO_RFC7A.gif" alt=""/> }
         { allMovies }
       </section>
     )

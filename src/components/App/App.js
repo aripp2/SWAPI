@@ -33,6 +33,7 @@ class App extends Component {
   }
   
   getCharacters = (charactersUrls) => {
+    this.setState({isLoading: true})
     fetchCharacters(charactersUrls)
       .then(data => this.setState({ selectedCharacters: data, isLoading: false }))
       .catch(error => this.setState({ error: 'Something is wrong in the universe'}))
@@ -66,15 +67,15 @@ class App extends Component {
         <main>
           <h1>STAR WARS</h1>
           {haveUser && <UserProfile {...user} favorites={favorites}/>}
-          <Route exact path='/movies' render={() => <MoviesContainer movies={movies} getCharacters={this.getCharacters} /> } />
-          // put in loading? 
+          <Route exact path='/movies' render={() => <MoviesContainer movies={movies} getCharacters={this.getCharacters}  /> } />
           <Route exact path='/movies/:id' render={({ match }) => {
             const selectedMovie = movies.find(movie => movie.episode_id === parseInt(match.params.id))
             return (
             <CharactersContainer 
               characters={selectedCharacters}
               updateFavs={this.updateFavs} 
-              movieInfo={selectedMovie} />)}} />
+              movieInfo={selectedMovie} 
+              isLoading={this.state.isLoading} />)}} />
             <Route exact path='/favorites' render={() => <CharactersContainer 
               characters={favorites}
               updateFavs={this.updateFavs}
