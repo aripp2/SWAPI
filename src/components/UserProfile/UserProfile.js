@@ -1,6 +1,6 @@
 import React from 'react';
 import './UserProfile.scss';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const UserProfile = ({ name, quote, knowledgeLevel, favorites }) => {
 
@@ -12,10 +12,15 @@ const UserProfile = ({ name, quote, knowledgeLevel, favorites }) => {
         <h2>{name}</h2>
         <h4>Favorite Quote: {quote}</h4>
         <h4>Knowledge Level: {knowledgeLevel}</h4>
-        <NavLink to='/favorites'>
-          <button>Favorites {favNum}</button></NavLink>
-        <NavLink  to='/'>Sign Out</NavLink>
-        <NavLink  to='/movies'>Back to All Movies</NavLink>
+        <Link to='/favorites'>
+          <button>Favorites {favNum}</button>
+        </Link>
+        <Link to='/'>
+          <button>Sign Out</button>
+        </Link>
+        <Link to='/movies'>
+          <button>All Movies</button>
+        </Link>
       </aside>
     )
 }
