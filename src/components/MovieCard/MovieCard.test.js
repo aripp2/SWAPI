@@ -7,7 +7,6 @@ describe('MovieCard',() => {
   let wrapper;
 
   beforeEach(() => {
-    const mockDate = '05/19/1999'
     const mockGetCharacters = jest.fn();
     wrapper = shallow(<MovieCard onclick={mockGetCharacters} />);
   })
@@ -23,13 +22,13 @@ describe('MovieCard',() => {
       episode_id: 1,
       opening_crawl: "Turmoil has engulfed the Galactic Republic.The taxation of trade routes to outlying star systems is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo. While the Congress of the Republic endlessly debatesthis alarming chain of events,the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict....",
       release_date: "1999-05-19",
-      title: "The Phantom Menace",
+      title: "The Phantom Menace"
     }
     const wrapper = shallow(<MovieCard
       key={1}
       id={mockData.episode_id}
       title={mockData.title}
-      date={mockDate}
+      date={mockData.release_date}
       characters={mockData.characters}
       getCharacters={mockGetCharacters}
     />)
