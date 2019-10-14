@@ -4,49 +4,41 @@ import CharacterCard from './CharacterCard'
 
 describe('CharacterCard', () => {
 
+//   beforeEach(()=> {
+//     const mockData = {
+//           films: [
+//             'The Empire Strikes Back',
+//             'Attack of the Clones',
+//             'The Phantom Menace',
+//             'Revenge of the Sith',
+//             'Return of the Jedi',
+//             'A New Hope'
+//           ],
+//           homeworld: 'Tatooine',
+//           name: 'C-3PO',
+//           population: '200000',
+//           species: 'Droid'
+//         }
+// })
+
   it('should match snapshot', () => {
-    const wrapper = shallow(<CharacterCard characters={ [
-        {
-          films: [
-            'The Empire Strikes Back',
+    
+    const wrapper = shallow(<CharacterCard
+      key={'C-3PO'}
+      id={1}
+      name={'C-3PO'}
+      homeworld={'Tatooine'}
+      population={200000}
+      species={'Droid'}
+      films={['The Empire Strikes Back',
             'Attack of the Clones',
             'The Phantom Menace',
             'Revenge of the Sith',
             'Return of the Jedi',
-            'A New Hope'
-          ],
-          homeworld: 'Tatooine',
-          name: 'C-3PO',
-          population: '200000',
-          species: 'Droid'
-        },
-        {
-          films: [
-            'The Empire Strikes Back',
-            'Attack of the Clones',
-            'The Phantom Menace',
-            'Revenge of the Sith',
-            'Return of the Jedi',
-            'A New Hope',
-            'The Force Awakens'
-          ],
-          homeworld: 'Naboo',
-          name: 'R2-D2',
-          population: '4500000000',
-          species: 'Droid'
-        }
-    ]} /> )
+            'A New Hope']}
+      updateFavs={jest.fn()}
+    /> )
 
     expect(wrapper).toMatchSnapshot(); 
   })
-
-    // it('should return an li of the ', () => {
-    //   const expected = "The Phantom Menace"
-    //   const mockFunction= jest.fn()
-    //   const wrapper = <CharacterCard characters={[{ name: "C-3PO", species: "Droid", homeworld: "Tatooine", population: "200000", films: ["The Phantom Menace"]}] }/>
-        
-    //   expect(mockFunction()).toEqual(expected)
-    //   })
-
 })
-

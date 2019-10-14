@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CharactersContainer should match snapshot 1`] = `
-<section>
+<section
+  className="characterContainer_section"
+>
   <CharacterCard
     films={
       Array [
@@ -35,6 +37,7 @@ exports[`CharactersContainer should match snapshot 1`] = `
     key="R2-D2"
     name="R2-D2"
     population="4500000000"
+    species="Droid"
   />
 </section>
 `;
