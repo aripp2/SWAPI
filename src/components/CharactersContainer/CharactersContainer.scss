@@ -27,7 +27,7 @@
 }
 @keyframes swcrawl {
     0% {
-      transform: rotatex(45deg) translateY(470px);
+      transform: rotatex(30deg) translateY(470px);
       opacity: 1;
   }
     25% {
@@ -37,15 +37,15 @@
         opacity: 1;
       }
     100% {
-      opacity: 0;
-      transform: rotatex(45deg) translateY(-50px);}
+      opacity: 1;
+      transform: rotatex(30deg) translateY(-50px);}
 }
 
 header { 
   height: 300px;               
   background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
   color: #E6CA3A;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .scroll {
@@ -55,7 +55,7 @@ header {
     & .away {
       margin: auto;
       animation-duration: 4s;
-      animation-delay: 5s;
+      animation-delay: 6s;
       animation-name: farfar;
       opacity: 0;
       width: 350px;

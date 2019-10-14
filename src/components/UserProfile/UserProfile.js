@@ -14,6 +14,7 @@ const UserProfile = ({ name, quote, knowledgeLevel, favorites }) => {
         <h4>Knowled Level: {knowledgeLevel}</h4>
         <NavLink to='/favorites'><button>Favorites {favNum}</button></NavLink>
         <NavLink  to='/'>Sign Out</NavLink>
+        <NavLink  to='/movies'>Back to All Movies</NavLink>
       </aside>
     )
 }
