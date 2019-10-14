@@ -3,9 +3,11 @@ import './MovieCard.scss';
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ id, title, date, characters, getCharacters }) => {
+
   const fixedDate = new Date(date + 'T00:00').toString().split(' ').slice(1, 4).join(' ')
+
   const convert = (num) => {
-    if(num < 1) {return ''}
+    if(num < 1) {return '' }
     if (num >= 4){return 'IV' + convert(num - 4)}
     if (num >= 1){return 'I' + convert(num - 1)}
   }

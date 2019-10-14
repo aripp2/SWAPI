@@ -45,7 +45,8 @@
 }
 
 header { 
-  height: 300px;               
+  height: 300px;
+  width: 100%;               
   background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
   color: #E6CA3A;
   overflow: hidden;
@@ -110,3 +111,10 @@ header {
       }
     }
 }
+
+.characterContainer_section {
+  display: flex; 
+  flex-wrap: wrap; 
+  position: relative; 
+}
+

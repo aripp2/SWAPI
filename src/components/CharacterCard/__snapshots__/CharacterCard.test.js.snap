@@ -1,39 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CharacterCard should match snapshot 1`] = `
-<CharacterCard
-  characters={
-    Array [
-      Object {
-        "films": Array [
-          "The Empire Strikes Back",
-          "Attack of the Clones",
-          "The Phantom Menace",
-          "Revenge of the Sith",
-          "Return of the Jedi",
-          "A New Hope",
-        ],
-        "homeworld": "Tatooine",
-        "name": "C-3PO",
-        "population": "200000",
-        "species": "Droid",
-      },
-      Object {
-        "films": Array [
-          "The Empire Strikes Back",
-          "Attack of the Clones",
-          "The Phantom Menace",
-          "Revenge of the Sith",
-          "Return of the Jedi",
-          "A New Hope",
-          "The Force Awakens",
-        ],
-        "homeworld": "Naboo",
-        "name": "R2-D2",
-        "pecies": "Droid",
-        "population": "4500000000",
-      },
-    ]
-  }
-/>
+<div
+  className="CharacterCard"
+>
+  <h3
+    className="CharacterCard_name"
+  >
+    C-3PO
+  </h3>
+  <h4
+    className="CharacterCard_homeWorld"
+  >
+    Homeworld: 
+    Tatooine
+  </h4>
+  <h4
+    className="CharacterCard_population"
+  >
+    Population of Homeworld: 
+    200000
+  </h4>
+  <h4
+    className="CharacterCard_species"
+  >
+    Species: 
+    Droid
+  </h4>
+  <h4
+    className="CharacterCard_films"
+  >
+    Related Films: 
+  </h4>
+  <ul
+    className="CharacterCard_films-ul"
+  >
+    <li
+      key="0"
+    >
+      The Empire Strikes Back
+    </li>
+    <li
+      key="1"
+    >
+      Attack of the Clones
+    </li>
+    <li
+      key="2"
+    >
+      The Phantom Menace
+    </li>
+    <li
+      key="3"
+    >
+      Revenge of the Sith
+    </li>
+    <li
+      key="4"
+    >
+      Return of the Jedi
+    </li>
+    <li
+      key="5"
+    >
+      A New Hope
+    </li>
+  </ul>
+  <button
+    className="CharacterCard_character-btn"
+    onClick={[Function]}
+  >
+    Favorite
+  </button>
+</div>
 `;

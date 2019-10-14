@@ -2,8 +2,11 @@ import React from 'react';
 import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
-const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
-  
+
+// const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
+
+const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) => {
+
   const characterInfo = characters.map((character) => {
     return <CharacterCard 
             key={character.name}
@@ -15,10 +18,11 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
             films={character.films}
             updateFavs={updateFavs}  
           />
-  })
+    })
 
   return (
-      <section className='character-container container'>
+     
+      <section className="characterContainer_section">
         <header className='scroll'>  
           <h2 className="title">{movieInfo.title}</h2>
 
@@ -28,6 +32,7 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
             <p>{movieInfo.opening_crawl}</p>
           </div>
         </header>
+        {isLoading && <img src="https://miro.medium.com/max/1600/1*jfvE2OewojuD1gzO_RFC7A.gif" alt=""/>}
         {characterInfo}
       </section>
     )

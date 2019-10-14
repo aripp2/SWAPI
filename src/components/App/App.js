@@ -33,6 +33,7 @@ class App extends Component {
   }
   
   getCharacters = (charactersUrls) => {
+    this.setState({isLoading: true})
     fetchCharacters(charactersUrls)
       .then(data => this.setState({ selectedCharacters: data, isLoading: false }))
       .catch(error => this.setState({ error: 'Something is wrong in the universe'}))
@@ -62,7 +63,6 @@ class App extends Component {
     return (
       <div>
         <Route exact path='/' render={() => <UserForm
-          user={user}
           submitUser={this.submitUser} /> } />
         <main>
           {haveUser && <UserProfile {...user} favorites={favorites}/>}
@@ -75,7 +75,8 @@ class App extends Component {
             <CharactersContainer 
               characters={selectedCharacters}
               updateFavs={this.updateFavs} 
-              movieInfo={selectedMovie} />)}} />
+              movieInfo={selectedMovie} 
+              isLoading={this.state.isLoading} />)}} />
             <Route exact path='/favorites' render={() => <CharactersContainer 
               characters={favorites}
               updateFavs={this.updateFavs}

@@ -15,6 +15,10 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
+  it('should update state when submitUser is called' () => {
+    
+  })
+
 }); 
 
 
