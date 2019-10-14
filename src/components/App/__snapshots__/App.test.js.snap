@@ -19,6 +19,7 @@ exports[`App should match the Snapshot 1`] = `
       path="/movies"
       render={[Function]}
     />
+    // put in loading?
     <Route
       exact={true}
       path="/characters"

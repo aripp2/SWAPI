@@ -1,0 +1,64 @@
+
+.CharacterCard {
+  position: relative; 
+  box-shadow: 0px 5px 5px 0px #e8e8e8, 0px 10px 10px 0px #e8e8e8;
+  margin: 20px; 
+  padding: 11px; 
+  margin: 10px;
+  min-height: 400px;
+  min-width: 342px;
+  max-width: 30%;
+
+}
+
+.CharacterCard_name { 
+  position: absolute;
+  top: 240px;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.CharacterCard_homeWorld {
+  position: absolute;
+  top: 79px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.CharacterCard_species {
+  position: absolute;
+  top: 50px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.CharacterCard_population {
+  position: absolute;
+  top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.CharacterCard_character-btn {
+  position: absolute;
+    bottom: -26px;
+    right: 19px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 239px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.CharacterCard_films {
+  position: absolute;
+  top: 114px;
+  font-size: 20px;
+}
+.CharacterCard_films-ul {
+  position: absolute;
+  top: 156px;
+  font-size: 14px;
+  font-weight: 600;
+  list-style: none; 
+}

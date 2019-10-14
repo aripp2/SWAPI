@@ -2,10 +2,8 @@ import React from 'react';
 import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
-const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
+const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) => {
   //user movieInfo.opening_crawl to get text when we know where and how to use it
-  
-  console.log("characters", characters)
   const characterInfo = characters.map((character) => {
     return <CharacterCard 
             key={character.name}
@@ -20,7 +18,8 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
   })
 
   return (
-      <section>
+      <section className="characterContainer_section">
+        {isLoading && <img src="https://miro.medium.com/max/1600/1*jfvE2OewojuD1gzO_RFC7A.gif" alt=""/>}
         {characterInfo}
       </section>
     )
