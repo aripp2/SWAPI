@@ -50,7 +50,7 @@ class UserForm extends Component {
 
 
           <div className="user_radio-btn-div">
-            <label className="user_radio-label">How much do you know about Star Wars?</label>
+            <label className="user_radio-title">How much do you know about Star Wars?</label>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
                 <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Star What?' 
