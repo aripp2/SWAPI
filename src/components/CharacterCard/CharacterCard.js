@@ -9,16 +9,16 @@ const CharacterCard = ({ name, homeworld, population, species, films, updateFavs
     return <li key={i}>{film}</li>
   })
   return (
-      <div>
-        <h3>{name}</h3>
-        <h4>Homeworld: {homeworld}</h4>
-        <h4>Population of Homeworld: {population}</h4>
-        <h4>Species: {species}</h4>
-        <h4>Related Films: </h4>
-          <ul>
-            <li>{filmsList}</li>
+      <div className="CharacterCard">
+        <h3 className="CharacterCard_name">{name}</h3>
+        <h4 className="CharacterCard_homeWorld">Homeworld: {homeworld}</h4>
+        <h4 className="CharacterCard_population">Population of Homeworld: {population}</h4>
+        <h4 className="CharacterCard_species">Species: {species}</h4>
+        <h4 className="CharacterCard_films" >Related Films: </h4>
+          <ul className="CharacterCard_films-ul">
+            {filmsList}
           </ul>
-        <button
+        <button className="CharacterCard_character-btn"
           onClick={() => updateFavs(character)}
         >Favorite</button>
       </div>
