@@ -47,7 +47,10 @@ class UserForm extends Component {
             <label className="user_quote-label">Favorite SW Quote?</label>
             <textarea className="user_quote-textarea" value={this.state.quote} name="quote" onChange={(event) => this.handleChange(event)} />
           </div>
+
+
           <div className="user_radio-btn-div">
+            <label className="user_radio-label">How much do you know about Star Wars?</label>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
                 <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Star What?' 
@@ -57,13 +60,15 @@ class UserForm extends Component {
             </div>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
-                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Jedi in Training?'        onChange={(event) => this.handleChange(event)} /> 
+                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Jedi in Training?'
+                onChange={(event) => this.handleChange(event)}/> 
                 Jedi in Training
               </label>
             </div>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
-                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='My firtsborns name is yoda' 
+                <input className="user_radio-input" type='radio'  value='My firtsborns name is yoda' 
+                name="knowledgeLevel"
                 onChange={(event) => this.handleChange(event)} /> 
                 My Firstborns names is Yoda
               </label>

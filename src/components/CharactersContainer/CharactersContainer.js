@@ -32,7 +32,7 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
             <p>{movieInfo.opening_crawl}</p>
           </div>
         </header>
-        {isLoading && <img src="https://miro.medium.com/max/1600/1*jfvE2OewojuD1gzO_RFC7A.gif" alt=""/>}
+        {isLoading && <h1>Loading ...</h1>}
         {characterInfo}
       </section>
     )
