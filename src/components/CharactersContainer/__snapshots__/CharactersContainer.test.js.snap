@@ -4,6 +4,23 @@ exports[`CharactersContainer should match snapshot 1`] = `
 <section
   className="characterContainer_section"
 >
+  <header
+    className="scroll"
+  >
+    <h2
+      className="title"
+    />
+    <div
+      className="galaxy"
+    >
+      <h3
+        className="away"
+      >
+        A long time ago in a galaxy far, far away...
+      </h3>
+      <p />
+    </div>
+  </header>
   <CharacterCard
     films={
       Array [
@@ -20,6 +37,7 @@ exports[`CharactersContainer should match snapshot 1`] = `
     name="C-3PO"
     population="200000"
     species="Droid"
+    updateFavs={[MockFunction]}
   />
   <CharacterCard
     films={
@@ -38,6 +56,7 @@ exports[`CharactersContainer should match snapshot 1`] = `
     name="R2-D2"
     population="4500000000"
     species="Droid"
+    updateFavs={[MockFunction]}
   />
 </section>
 `;

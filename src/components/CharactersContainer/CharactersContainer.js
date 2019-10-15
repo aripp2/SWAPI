@@ -20,10 +20,14 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
   return (
      
       <section className="characterContainer_section">
-        {!movieInfo && 
-          <header>
-            <h2 className="favs-header">Your Favorite Characters</h2>
-          </header>}
+
+        {!movieInfo &&
+            <header className="favs-header">
+              <h2>Your Favorite Characters</h2>
+            </header>}
+
+        {characters.length === 0 && !movieInfo && <p className="favs-prompt">Looks like you do not have any favorites yet. Head back to Movies and click on View Characters to add some favorites here!</p>}
+    
         {movieInfo && <header className='scroll'>  
           <h2 className="title">{movieInfo.title}</h2>
           <div className="galaxy">
@@ -31,7 +35,7 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
             </h3>
             <p>{movieInfo.opening_crawl}</p>
           </div>
-        </header>
+        </header>}
         {isLoading && <h1>Loading ...</h1>}
         {characterInfo}
       </section>
@@ -42,7 +46,7 @@ export default CharactersContainer;
 
 CharactersContainer.propTypes = {
   characters: PropTypes.array.isRequired,
-  movieInfo: PropTypes.object,
+  movieInfo: PropTypes.any,
   updateFavs: PropTypes.func.isRequired,
   isLoading: PropTypes.bool
 };

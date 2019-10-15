@@ -13,26 +13,18 @@ describe('App', () => {
 
   it('should match the Snapshot', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
-  it('should change state based on an event', () => {
-    const mockFunction = jest.fn()
-    const wrapper = shallow(<UserForm
-      submitUser={mockFunction}
-    />)
-    const mockData = {
-        user: {
-          name: 'Amy',
-          quote: 'Star What?',
-          knowledgeLevel: 'Jedi'
-        } , 
-      haveUser: true
+  it('should update state when submitUser is called', () => {
+    const mockUser = {
+      name: 'Amy',
+      quote: 'No clue',
+      knowledgeLevel: 'Star What?'
     }
 
-    wrapper.instance().hand(mockEvent)
-    expect(wrapper.state('quote')).toEqual()
-  })
-
+    wrapper.instance().submitUser(mockUser)
+    expect(wrapper.state('user')).toEqual(mockUser)
+  });
 
 }); 
 
