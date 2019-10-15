@@ -4,7 +4,7 @@
   position: relative; 
   box-shadow: 0px 5px 5px 0px #e8e8e8, 0px 10px 10px 0px #e8e8e8;
   margin: 20px; 
-  padding: 11px; 
+  padding: 30px; 
   margin: 10px;
   min-height: 400px;
   min-width: 342px;
@@ -14,51 +14,88 @@
 
 .CharacterCard_name { 
   position: absolute;
-  top: 240px;
+  top: 250px;
+  left: 33px;
   font-size: 40px;
   font-weight: 900;
 }
 
+.CharacterCard_homeWorld-title {
+  position: absolute;
+  top: 91px;
+  left: 35px;
+  font-size: 10px;
+  font-weight: 600; 
+}
+
 .CharacterCard_homeWorld {
   position: absolute;
-  top: 79px;
+  top: -8px;
+  left: 62px;
   font-size: 20px;
+  font-weight: 600;
+}
+
+.CharacterCard_species-title {
+  position: absolute;
+  top: 60px;
+  left: 35px;
+  font-size: 10px;
   font-weight: 600;
 }
 
 .CharacterCard_species {
   position: absolute;
-  top: 50px;
+  top: -8px;
+  left: 46px;
+  font-size: 20px;
+  width: 142px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.CharacterCard_population-title {
+  position: absolute;
+  top: 28px;
+  left: 35px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.CharacterCard_population {
+  position: absolute;
+  top: -8px;
+  left: 60px;
   font-size: 20px;
   font-weight: 600;
 }
 
-.CharacterCard_population {
-  position: absolute;
-  top: 20px;
-  font-size: 20px;
-  font-weight: 600;
+.CharacterCard_character-btn:hover {
+  background-color: $form-color;
 }
 
 .CharacterCard_character-btn {
   position: absolute;
-    bottom: -26px;
-    right: 19px;
-    font-size: 20px;
-    font-weight: 600;
-    width: 239px;
-    height: 50px;
-    border-radius: 25px;
+  bottom: -26px;
+  right: 19px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 239px;
+  height: 50px;
+  border-radius: 25px;
 }
 
 .CharacterCard_films {
   position: absolute;
-  top: 114px;
-  font-size: 20px;
+  top: 130px;
+  left: 35px;
+  font-size: 10px;
+  font-weight: 600; 
 }
 .CharacterCard_films-ul {
   position: absolute;
   top: 156px;
+  left: 54px;
+  font-size: 15px;
   font-size: 14px;
   font-weight: 600;
   list-style: none; 
