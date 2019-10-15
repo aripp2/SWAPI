@@ -26,7 +26,7 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
               <h2>Your Favorite Characters</h2>
             </header>}
 
-        {characters.length === 0 && !movieInfo && <p className="favs-prompt">Looks like you do not have any favorites yet. Head back to Movies and view their character to add some favorite charaters here!</p>}
+        {characters.length === 0 && !movieInfo && <p className="favs-prompt">Looks like you do not have any favorites yet. Head back to Movies and click on View Characters to add some favorites here!</p>}
     
         {movieInfo && <header className='scroll'>  
           <h2 className="title">{movieInfo.title}</h2>
