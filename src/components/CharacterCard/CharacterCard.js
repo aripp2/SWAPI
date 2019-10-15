@@ -22,7 +22,7 @@ const CharacterCard = ({ name, homeworld, population, species, films, updateFavs
           </ul>
         <button
           onClick={() => updateFavs(character)}
-        >Favorite</button>
+        ><img src="" alt="" />Favorite</button>
       </div>
     );
 };

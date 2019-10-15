@@ -19,15 +19,16 @@ class UserForm extends Component {
   }
 
   handleFormSubmit = event => {
-    // event.preventDefault();
-    this.props.submitUser({
+      this.props.submitUser({
       name: this.state.name,
       quote: this.state.quote,
       knowledgeLevel: this.state.knowledgeLevel
     })
+
   }
   
   render() {
+    const isNotDisabled = (this.state.name !== '') && (this.state.quote !== '') && (this.state.knowledgeLevel !== '')
     return (
       <div className="user_profile-div">
         <img className="user_profile-image" alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi" src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif" />
@@ -44,6 +45,7 @@ class UserForm extends Component {
             <textarea className="user_quote-textarea" value={this.state.quote} name="quote" onChange={(event) => this.handleChange(event)} />
           </div>
           <div className="user_radio-btn-div">
+            <label className="user_radio-title">How much do you know about Star Wars?</label>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
                 <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Star What?' 
@@ -53,19 +55,21 @@ class UserForm extends Component {
             </div>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
-                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Jedi in Training?'        onChange={(event) => this.handleChange(event)} /> 
+                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='Jedi in Training?'
+                onChange={(event) => this.handleChange(event)}/> 
                 Jedi in Training
               </label>
             </div>
             <div className="user_radio-div">
               <label className="user_radio-label"> 
-                <input className="user_radio-input" type='radio' name="knowledgeLevel" value='My firtsborns name is yoda' 
+                <input className="user_radio-input" type='radio'  value='My firtsborns name is yoda' 
+                name="knowledgeLevel"
                 onChange={(event) => this.handleChange(event)} /> 
                 My Firstborns names is Yoda
               </label>
             </div> 
           </div>
-          <Link to='/movies'><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
+          <Link to='/movies'><button className="user-submit-btn" type="submit" disabled={!isNotDisabled} onClick={this.handleFormSubmit}>ENTER</button></Link>
         </form>
       </div>
       )

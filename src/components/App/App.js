@@ -20,7 +20,7 @@ class App extends Component {
       isLoading: true,
       error: ''
     }
-  }
+  } 
 
   componentDidMount() {
     getMovies()
