@@ -84,7 +84,7 @@ class App extends Component {
             <CharactersContainer 
               characters={favorites}
               updateFavs={this.updateFavs}
-              movieInfo={movies[0]}  />} />
+                />} />
         </main> 
       </div>
     )

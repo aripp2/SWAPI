@@ -7,8 +7,7 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
 
   const characterInfo = characters.map((character) => {
     return <CharacterCard 
-            key={character.name}
-            id={movieInfo.episode_id}
+            key={character.name} 
             name={character.name}
             homeworld={character.homeworld}
             population={character.population}
@@ -21,14 +20,18 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
   return (
      
       <section className="characterContainer_section">
-        <header className='scroll'>  
+        {!movieInfo && 
+          <header>
+            <h2 className="favs-header">Your Favorite Characters</h2>
+          </header>}
+        {movieInfo && <header className='scroll'>  
           <h2 className="title">{movieInfo.title}</h2>
-          <div className="fall">
-            <div className="away">A long time ago in a galaxy far, far away...
-            </div>
+          <div className="galaxy">
+            <h3 className="away">A long time ago in a galaxy far, far away...
+            </h3>
             <p>{movieInfo.opening_crawl}</p>
           </div>
-        </header>
+        </header>}
         {isLoading && <h2>Loading...</h2>}
         {characterInfo}
       </section>
