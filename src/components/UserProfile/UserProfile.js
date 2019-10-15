@@ -1,6 +1,7 @@
 import React from 'react';
-import './UserProfile.scss';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './UserProfile.scss';
 
 const UserProfile = ({ name, quote, knowledgeLevel, favorites }) => {
 
@@ -22,7 +23,14 @@ const UserProfile = ({ name, quote, knowledgeLevel, favorites }) => {
           <button>All Movies</button>
         </Link>
       </aside>
-    )
-}
+    );
+};
 
 export default UserProfile;
+
+UserProfile.propTypes = {
+  name: PropTypes.string.isRequired,
+  quote: PropTypes.string.isRequired,
+  knowledgeLevel: PropTypes.string.isRequired,
+  favorites: PropTypes.array.isRequired,
+};

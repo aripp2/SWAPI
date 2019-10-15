@@ -62,13 +62,16 @@ class App extends Component {
     
     return (
       <div>
-        <Route exact path='/' render={() => <UserForm
-          submitUser={this.submitUser} /> } />
+        <Route exact path='/' render={() => 
+          <UserForm
+            submitUser={this.submitUser} />} />
         <main>
           {haveUser && <UserProfile {...user} favorites={favorites}/>}
-          {isLoading && <h2>Loading...</h2>}
           {error && <h2>{error}</h2>}
-          <Route exact path='/movies' render={() => <MoviesContainer movies={movies} getCharacters={this.getCharacters} /> } />
+          <Route exact path='/movies' render={() => 
+            <MoviesContainer 
+              movies={movies} 
+              getCharacters={this.getCharacters} />} />
           <Route exact path='/movies/:id' render={({ match }) => {
             const selectedMovie = movies.find(movie => movie.episode_id === parseInt(match.params.id))
             return (
@@ -76,8 +79,9 @@ class App extends Component {
               characters={selectedCharacters}
               updateFavs={this.updateFavs} 
               movieInfo={selectedMovie} 
-              isLoading={this.state.isLoading} />)}} />
-            <Route exact path='/favorites' render={() => <CharactersContainer 
+              isLoading={isLoading} />)}} />
+          <Route exact path='/favorites' render={() => 
+            <CharactersContainer 
               characters={favorites}
               updateFavs={this.updateFavs}
               movieInfo={movies[0]}  />} />
@@ -85,6 +89,9 @@ class App extends Component {
       </div>
     )
   }
-}
+};
 
 export default App;
+
+
+

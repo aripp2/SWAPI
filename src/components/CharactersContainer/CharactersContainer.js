@@ -1,9 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard';
-
-
-// const CharactersContainer = ({ characters, movieInfo, updateFavs }) => {
 
 const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) => {
 
@@ -18,30 +16,32 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
             films={character.films}
             updateFavs={updateFavs}  
           />
-    })
+    });
 
   return (
      
       <section className="characterContainer_section">
         <header className='scroll'>  
           <h2 className="title">{movieInfo.title}</h2>
-
           <div className="fall">
             <div className="away">A long time ago in a galaxy far, far away...
             </div>
             <p>{movieInfo.opening_crawl}</p>
           </div>
         </header>
-        {isLoading && <img src="https://miro.medium.com/max/1600/1*jfvE2OewojuD1gzO_RFC7A.gif" alt=""/>}
+        {isLoading && <h2>Loading...</h2>}
         {characterInfo}
       </section>
-    )
-}
+    );
+};
 
 export default CharactersContainer;
 
-          // <div className="title">
-            // <img src="http://vignette1.wikia.nocookie.net/disney/images/8/8b/Starwars-logo.png/revision/latest?cb=20141129122237" alt='space background'/>
-          // }
-          // </div>
+CharactersContainer.propTypes = {
+  characters: PropTypes.array.isRequired,
+  movieInfo: PropTypes.object,
+  updateFavs: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool
+};
+
 

@@ -49,7 +49,7 @@ header {
   width: 100%;               
   background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
   color: #E6CA3A;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .scroll {
@@ -113,8 +113,10 @@ header {
 }
 
 .characterContainer_section {
+  width: 80%;
   display: flex; 
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  justify-content: space-around; 
   position: relative; 
 }
 

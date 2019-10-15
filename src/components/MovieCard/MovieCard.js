@@ -1,17 +1,20 @@
 import React from 'react';
-import './MovieCard.scss';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './MovieCard.scss';
 
 const MovieCard = ({ id, title, date, characters, getCharacters }) => {
 
-  const fixedDate = new Date(date + 'T00:00').toString().split(' ').slice(1, 4).join(' ')
+  const fixedDate = new Date(date + 'T00:00').toString().split(' ').slice(1, 4).join(' ');
 
   const convert = (num) => {
     if(num < 1) {return '' }
     if (num >= 4){return 'IV' + convert(num - 4)}
     if (num >= 1){return 'I' + convert(num - 1)}
-  }
-  const roman = convert(id)
+  };
+
+  const roman = convert(id);
+
   return (
       <div className="movie_card">
         <h3 className="episode">Episode {roman}</h3>
@@ -24,7 +27,15 @@ const MovieCard = ({ id, title, date, characters, getCharacters }) => {
           >View Characters</button>
         </Link>
       </div>
-    )
-}
+    );
+};
 
 export default MovieCard;
+
+MovieCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired, 
+  date: PropTypes.string.isRequired, 
+  characters: PropTypes.array.isRequired, 
+  getCharacters: PropTypes.func.isRequired
+};

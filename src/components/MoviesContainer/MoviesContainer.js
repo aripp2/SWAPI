@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './MoviesContainer.scss';
 import MovieCard from '../MovieCard/MovieCard';
 
-const MoviesContainer = ({ movies, getCharacters, isLoading }) => {
-  let sortedMovies = movies.sort((a, b) => a.episode_id - b.episode_id)
+const MoviesContainer = ({ movies, getCharacters }) => {
+  let sortedMovies = movies.sort((a, b) => a.episode_id - b.episode_id);
 
   const allMovies = sortedMovies.map((movie, i) => {
     return <MovieCard
@@ -14,15 +15,18 @@ const MoviesContainer = ({ movies, getCharacters, isLoading }) => {
       characters={movie.characters}
       getCharacters={getCharacters}
       />
-    })
+    });
 
   return (
       <section className="MovieContainer">
-        {isLoading && <img src="https://miro.medium.com/max/1600/1*jfvE2OewojuD1gzO_RFC7A.gif" alt=""/> }
         { allMovies }
       </section>
-    )
-}
+    );
+};
 
 export default MoviesContainer;
 
+MoviesContainer.propTypes = {
+  movies: PropTypes.array.isRequired,
+  getCharacters: PropTypes.func.isRequired
+};
