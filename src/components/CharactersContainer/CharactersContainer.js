@@ -35,7 +35,7 @@ const CharactersContainer = ({ characters, movieInfo, updateFavs, isLoading }) =
             </h3>
             <p>{movieInfo.opening_crawl}</p>
           </div>
-        </header>
+        </header>}
         {isLoading && <h1>Loading ...</h1>}
         {characterInfo}
       </section>
