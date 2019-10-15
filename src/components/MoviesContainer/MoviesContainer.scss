@@ -1,8 +1,10 @@
+@import './src/variables.scss';
+
 .MovieContainer{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 90%;
+  width: 80%;
   height: 100vh;
   margin: 15px;
 }  

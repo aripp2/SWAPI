@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap');
-
-$title-font: 'Luckiest Guy', cursive;
-$body-font: 'Bitter', serif;
+@import './src/variables.scss';
 
 .movie_card {
   position: relative; 

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile should match the snapshot 1`] = `
+<aside>
+  <h1>
+    Star Wars Trivia
+  </h1>
+  <h2>
+    Amy
+  </h2>
+  <h4>
+    Favorite Quote: 
+    No clue
+  </h4>
+  <h4>
+    Knowledge Level: 
+    Star What?
+  </h4>
+  <Link
+    to="/favorites"
+  >
+    <button>
+      Favorites 
+      0
+    </button>
+  </Link>
+  <Link
+    to="/"
+  >
+    <button>
+      Sign Out
+    </button>
+  </Link>
+  <Link
+    to="/movies"
+  >
+    <button>
+      All Movies
+    </button>
+  </Link>
+</aside>
+`;

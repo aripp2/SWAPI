@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './UserForm.scss';
 
@@ -13,12 +14,8 @@ class UserForm extends Component {
     }
   }
 
-// componentDidMount() {
-//     this.setState({ knowledgeLevel: 'Star What?' })
-// }
-
   handleChange = event => {
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({[event.target.name]: event.target.value});
   }
 
   handleFormSubmit = event => {
@@ -31,7 +28,6 @@ class UserForm extends Component {
   }
   
   render() {
-    console.log(this.state.knowledgeLevel)
     return (
       <div className="user_profile-div">
         <img className="user_profile-image" alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi" src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif" />
@@ -74,6 +70,10 @@ class UserForm extends Component {
       </div>
       )
   }
-}
+};
 
 export default UserForm;
+
+UserForm.propTypes = {
+  submitUser: PropTypes.func.isRequired
+};

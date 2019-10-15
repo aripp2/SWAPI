@@ -1,13 +1,102 @@
+@import './src/variables.scss';
+
+.characterContainer_section {
+  width: 80%;
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  position: relative; 
+  // background: $space-background;
+  // background-size: cover;
+}
+
+.favs-header {
+  font-size: 2.5em;
+  font-family: $title-font;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header { 
+  height: 300px;
+  width: 100%; 
+  // background: url('https://images.unsplash.com/photo-1527190997915-67ce3b53cc58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80');              
+  background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
+  color: $yellow-color;
+  // overflow: hidden;
+}
+
+.scroll {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+
+    & .away {
+      margin: auto;
+      animation-duration: 4s;
+      animation-delay: 1s;
+      animation-name: farfar;
+      opacity: 0;
+      display: block;
+      text-indent: 0;
+      padding-top: 20px;
+      position: absolute;
+    }
+
+    & .title {
+      font-size: 3.5em;
+      font-family: $title-font;
+      letter-spacing: 0.2em;
+      margin: auto;
+      text-align: center;
+      padding-top: 125px;
+      display: block;
+      position: absolute;
+      width: 100%;
+      opacity: 1;
+      animation-name: title;
+      animation-delay: 0s;
+      animation-duration: 25s;
+    }
+
+    & > .galaxy {
+      font-family: $fill-font;
+      font-size: 2.5em;
+      margin: auto;
+      text-align: justify;
+      perspective: 400px;
+    
+      & > p {
+        font-size: 1em;
+        margin: auto;
+        width: 80%;
+        height: 50%;
+        line-height: 50px;
+        text-indent: 50px;
+        text-align: justify;
+        animation-name: crawl;
+        animation-delay: 5s;
+        animation-duration: 30s;
+        opacity: 0;
+      }
+    }
+}
+
 @keyframes title {
-  from {
-    width: 0%;
+  0% {
     opacity: 0;
   }
-  90% {
-    opacity: 1;
+  25% {
+    opacity: 0;
   }
-  to {
-    width: 100%;
+  80% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -16,10 +105,10 @@
   0% {
     opacity: 0;
   }
-  15% {
+  25% {
     opacity: 1;
   }
-  95% {
+  75% {
     opacity: 1;
   }
   100% {
@@ -27,7 +116,7 @@
   }
 }
 
-@keyframes swcrawl {
+@keyframes crawl {
   0% {
     transform: rotatex(30deg) translateY(300px);
     opacity: 1;
@@ -40,81 +129,6 @@
   }
   100% {
     opacity: 1;
-    transform: rotatex(30deg) translateY(-350px);
+    transform: rotatex(30deg) translateY(-700px);
   }
 }
-
-header { 
-  height: 300px;
-  width: 100%;               
-  background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
-  color: #E6CA3A;
-  overflow: hidden;
-}
-
-.scroll {
-  display: flex;
-  flex-direction: column;
-  top: 0;
-    & .away {
-      margin: auto;
-      animation-duration: 5s;
-      animation-delay: 1s;
-      animation-name: farfar;
-      opacity: 0;
-      width: 350px;
-      display: block;
-      text-indent: 0;
-      padding-top: 25%;
-      position: absolute;
-      font-weight: normal;
-    }
-    & .title {
-      font-size: 3em;
-      font-weight: 700;
-      margin: auto;
-      text-align: center;
-      padding-top: 125px;
-      width: 100%;
-      display: block;
-      position: absolute;
-      top: 0;
-    // }
-    
-    // & > div > img {
-      width: 100%;
-      opacity: 1;
-      animation-name: title;
-      animation-delay: 20s;
-      animation-duration: 15s;
-    }
-    & > .fall {
-      width: 600px;
-      font-family: 'Franklin Gothic   Book',sans-serif;
-      font-size: 32px;
-      line-height: 50px;
-      text-indent: 50px;
-      margin: auto;
-      text-align: justify;
-      perspective: 400px;
-      font-weight: bold;
-    
-      & > p {
-        margin: auto;
-        width: 100%;
-        height: 50%;
-        text-align: justify;
-        animation-name: swcrawl;
-        animation-delay: 5s;
-        animation-duration: 15s;
-        opacity: 0;
-      }
-    }
-}
-
-.characterContainer_section {
-  display: flex; 
-  flex-wrap: wrap; 
-  position: relative; 
-}
-

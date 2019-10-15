@@ -1,11 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CharacterCard.scss';
 
 const CharacterCard = ({ name, homeworld, population, species, films, updateFavs }) => {
-  const character = { name, homeworld, population, species, films }
+  
+  const character = { name, homeworld, population, species, films };
+
   const filmsList = films.map((film, i) => {
     return <li key={i}>{film}</li>
-  })
+  });
+
   return (
       <div className="CharacterCard">
         <h3 className="CharacterCard_name">{name}</h3>
@@ -20,8 +24,16 @@ const CharacterCard = ({ name, homeworld, population, species, films, updateFavs
           onClick={() => updateFavs(character)}
         >Favorite</button>
       </div>
-    )
-}
+    );
+};
 
 export default CharacterCard;
 
+CharacterCard.propTypes = { 
+  name: PropTypes.string.isRequired, 
+  homeworld: PropTypes.string.isRequired, 
+  population: PropTypes.string.isRequired, 
+  species: PropTypes.string.isRequired,
+  films: PropTypes.array.isRequired,
+  updateFavs: PropTypes.func.isRequired
+};
