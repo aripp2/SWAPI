@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './UserForm.scss';
 
@@ -14,8 +15,8 @@ class UserForm extends Component {
   }
 
   handleChange = event => {
-    this.setState({[event.target.name]: event.target.value})
-  
+    this.setState({[event.target.name]: event.target.value});
+  }
 
   handleFormSubmit = event => {
       this.props.submitUser({
@@ -73,6 +74,10 @@ class UserForm extends Component {
       </div>
       )
   }
-}
+};
 
 export default UserForm;
+
+UserForm.propTypes = {
+  submitUser: PropTypes.func.isRequired
+};
