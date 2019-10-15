@@ -8,11 +8,13 @@ const UserProfile = ({ name, quote, knowledgeLevel, favorites }) => {
   const favNum = favorites.length;
 
   return (
-      <aside>
-        <h1>Star Wars Trivia</h1>
-        <h2>{name}</h2>
-        <h4>Favorite Quote: {quote}</h4>
-        <h4>Knowledge Level: {knowledgeLevel}</h4>
+      <aside className="profile">
+        <h2>Star Wars Trivia</h2>
+        <h3>Hi {name}!</h3>
+        <h4>Favorite Quote:</h4>
+        <h5>"{quote}"</h5>
+        <h4>Knowledge Level:</h4>
+        <h5>{knowledgeLevel}</h5>
         <Link to='/favorites'>
           <button>Favorites {favNum}</button>
         </Link>

@@ -1,7 +1,46 @@
-aside {
+@import './src/variables.scss';
+
+.profile {
   width: 20%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  font-family: $body-font;
+  margin: 5px auto;
+  
+  h2 {
+    font-size: 3em;
+    font-family: $title-font;
+    margin: 15px auto;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 10px auto;
+  }
+
+  h4 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px auto;
+  }
+
+  h5 {
+    font-size: 1.2em;
+    margin: 5px auto;
+  }
+
+  button {
+    height: 40px;
+    width: 80%;
+    font-size: 1em;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #f0ffffba;
+    &:hover {
+      border: 3px solid $yellow-color;
+    }
+  }
 }
 

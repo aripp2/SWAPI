@@ -21,9 +21,10 @@
 
 header { 
   height: 300px;
-  width: 100%;               
+  width: 100%; 
+  // background: url('https://images.unsplash.com/photo-1527190997915-67ce3b53cc58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80');              
   background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
-  color: #E6CA3A;
+  color: $yellow-color;
   // overflow: hidden;
 }
 

@@ -61,7 +61,7 @@ class App extends Component {
     const { user, movies, selectedCharacters, favorites, haveUser, isLoading, error } = this.state;
     
     return (
-      <div>
+      <div className='App'>
         <Route exact path='/' render={() => 
           <UserForm
             submitUser={this.submitUser} />} />
