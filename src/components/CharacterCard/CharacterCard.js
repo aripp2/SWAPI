@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './CharacterCard.scss';
 
 const CharacterCard = ({ name, homeworld, population, species, films, updateFavs }) => {
-  
+
   const character = { name, homeworld, population, species, films };
 
   const filmsList = films.map((film, i) => {
@@ -32,7 +32,7 @@ export default CharacterCard;
 CharacterCard.propTypes = { 
   name: PropTypes.string.isRequired, 
   homeworld: PropTypes.string.isRequired, 
-  population: PropTypes.string.isRequired, 
+  population: PropTypes.any.isRequired, 
   species: PropTypes.string.isRequired,
   films: PropTypes.array.isRequired,
   updateFavs: PropTypes.func.isRequired

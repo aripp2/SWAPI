@@ -13,11 +13,18 @@ describe('App', () => {
 
   it('should match the Snapshot', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
-  it('should update state when submitUser is called' () => {
-    
-  })
+  it('should update state when submitUser is called', () => {
+    const mockUser = {
+      name: 'Amy',
+      quote: 'No clue',
+      knowledgeLevel: 'Star What?'
+    }
+
+    wrapper.instance().submitUser(mockUser)
+    expect(wrapper.state('user')).toEqual(mockUser)
+  });
 
 }); 
 

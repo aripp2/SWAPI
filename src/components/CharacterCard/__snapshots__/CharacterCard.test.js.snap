@@ -18,7 +18,7 @@ exports[`CharacterCard should match snapshot 1`] = `
   <h4
     className="CharacterCard_population"
   >
-    Population of Homeworld: 
+    Population: 
     200000
   </h4>
   <h4
@@ -67,7 +67,6 @@ exports[`CharacterCard should match snapshot 1`] = `
     </li>
   </ul>
   <button
-    className="CharacterCard_character-btn"
     onClick={[Function]}
   >
     Favorite

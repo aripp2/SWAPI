@@ -4,30 +4,30 @@ exports[`MovieCard should match Snapshot 1`] = `
 <div
   className="movie_card"
 >
-  <div
-    className="movie_card-style"
+  <h3
+    className="episode"
   >
-    <h3
-      className="episode"
+    Episode 
+    I
+  </h3>
+  <h4
+    className="movie_card-title"
+  >
+    The Phantom Menace
+  </h4>
+  <h5>
+    Released on 
+    May 19 1999
+  </h5>
+  <Link
+    to="/movies/1"
+  >
+    <button
+      className="movie_card-btn"
+      onClick={[Function]}
     >
-      Episode 
-    </h3>
-    <h4
-      className="movie_card-title"
-    />
-    <h5>
-      Released in 
-    </h5>
-    <Link
-      to="/characters"
-    >
-      <button
-        className="movie_card-btn"
-        onClick={[Function]}
-      >
-        View Characters
-      </button>
-    </Link>
-  </div>
+      View Characters
+    </button>
+  </Link>
 </div>
 `;
