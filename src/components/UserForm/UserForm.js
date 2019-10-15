@@ -9,32 +9,25 @@ class UserForm extends Component {
     this.state = {
       name: '',
       quote: '',
-      knowledgeLevel: '',
-      isValid: false
+      knowledgeLevel: ''
     }
   }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value})
-  }
-
   
 
   handleFormSubmit = event => {
-   if((this.state.name !== '') && (this.state.quote !== '') && (this.state.knowledgeLevel !== '')) {
-     this.setState(() => ({ isValid: true})); 
       this.props.submitUser({
       name: this.state.name,
       quote: this.state.quote,
       knowledgeLevel: this.state.knowledgeLevel
     })
-    } else {
-      this.setState(() => ({ isValid: false}));
-    }
+
   }
   
   render() {
-    console.log(this.state.knowledgeLevel)
+    const isNotDisabled = (this.state.name !== '') && (this.state.quote !== '') && (this.state.knowledgeLevel !== '')
     return (
       <div className="user_profile-div">
         <img className="user_profile-image" alt="Yo Jedi laser gif animation gif r2d2 cat menu starwars force jedi" src="https://cdn.dribbble.com/users/1539273/screenshots/6122439/spoilers_drib.gif" />
@@ -74,9 +67,8 @@ class UserForm extends Component {
                 My Firstborns names is Yoda
               </label>
             </div> 
-            <p className="form-p" style={{visibility: this.state.isValid ? 'hidden' : 'visible'}}>Please enter values for each input!</p>
           </div>
-          <Link to={this.state.isValid ? '/movies' : '/'}><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
+          <Link to='/movies'><button className="user-submit-btn" type="submit" disabled={!isNotDisabled} onClick={this.handleFormSubmit}>ENTER</button></Link>
         </form>
       </div>
       )
