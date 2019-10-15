@@ -69,6 +69,10 @@ exports[`CharacterCard should match snapshot 1`] = `
   <button
     onClick={[Function]}
   >
+    <img
+      alt=""
+      src=""
+    />
     Favorite
   </button>
 </div>
