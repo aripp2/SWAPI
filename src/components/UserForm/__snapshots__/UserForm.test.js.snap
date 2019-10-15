@@ -57,6 +57,11 @@ exports[`UserForm should match snapshot 1`] = `
     <div
       className="user_radio-btn-div"
     >
+      <label
+        className="user_radio-title"
+      >
+        How much do you know about Star Wars?
+      </label>
       <div
         className="user_radio-div"
       >
@@ -111,6 +116,7 @@ exports[`UserForm should match snapshot 1`] = `
     >
       <button
         className="user-submit-btn"
+        disabled={true}
         onClick={[Function]}
         type="submit"
       >

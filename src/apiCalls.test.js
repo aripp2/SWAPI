@@ -21,22 +21,22 @@ describe('getMovies', () => {
     }
   ]
 
-  const mockCleanedMovies = [
-    {
-      episode_id: 1,
-      title: 'Title One',
-      release_date: '2019-05-25',
-      opening_crawl: 'Some scroll text',
-      characters: ['url', 'another url']
-    },
-    {
-      episode_id: 2,
-      title: 'Title Two',
-      release_date: '2019-06-25',
-      opening_crawl: 'Some more scroll text',
-      characters: ['url', 'another url', 'and one more']
-    }
-  ]
+  // const mockCleanedMovies = [
+  //   {
+  //     episode_id: 1,
+  //     title: 'Title One',
+  //     release_date: '2019-05-25',
+  //     opening_crawl: 'Some scroll text',
+  //     characters: ['url', 'another url']
+  //   },
+  //   {
+  //     episode_id: 2,
+  //     title: 'Title Two',
+  //     release_date: '2019-06-25',
+  //     opening_crawl: 'Some more scroll text',
+  //     characters: ['url', 'another url', 'and one more']
+  //   }
+  // ]
 // add another mock data of before the map
 // mock the implementation of the map to return the final data
 
