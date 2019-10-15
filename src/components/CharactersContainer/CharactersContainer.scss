@@ -6,8 +6,15 @@
   flex-wrap: wrap;
   justify-content: space-around; 
   position: relative; 
-  // background: $space-background;
-  // background-size: cover;
+}
+
+.favs-prompt {
+  height: 200px;
+  width: 80%;
+  font-size: 3em;
+  font-family: $body-font;
+  text-align: center;
+  margin: 50px auto;
 }
 
 .favs-header {
@@ -21,11 +28,9 @@
 
 header { 
   height: 300px;
-  width: 100%; 
-  // background: url('https://images.unsplash.com/photo-1527190997915-67ce3b53cc58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80');              
+  width: 100%;              
   background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
   color: $yellow-color;
-  // overflow: hidden;
 }
 
 .scroll {
