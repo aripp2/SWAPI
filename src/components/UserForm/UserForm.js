@@ -9,25 +9,28 @@ class UserForm extends Component {
     this.state = {
       name: '',
       quote: '',
-      knowledgeLevel: ''
+      knowledgeLevel: '',
+      isValid: false
     }
   }
-
-// componentDidMount() {
-//     this.setState({ knowledgeLevel: 'Star What?' })
-// }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value})
   }
 
+  
+
   handleFormSubmit = event => {
-    // event.preventDefault();
-    this.props.submitUser({
+   if((this.state.name !== '') && (this.state.quote !== '') && (this.state.knowledgeLevel !== '')) {
+     this.setState(() => ({ isValid: true})); 
+      this.props.submitUser({
       name: this.state.name,
       quote: this.state.quote,
       knowledgeLevel: this.state.knowledgeLevel
     })
+    } else {
+      this.setState(() => ({ isValid: false}));
+    }
   }
   
   render() {
@@ -47,8 +50,6 @@ class UserForm extends Component {
             <label className="user_quote-label">Favorite SW Quote?</label>
             <textarea className="user_quote-textarea" value={this.state.quote} name="quote" onChange={(event) => this.handleChange(event)} />
           </div>
-
-
           <div className="user_radio-btn-div">
             <label className="user_radio-title">How much do you know about Star Wars?</label>
             <div className="user_radio-div">
@@ -73,8 +74,9 @@ class UserForm extends Component {
                 My Firstborns names is Yoda
               </label>
             </div> 
+            <p className="form-p" style={{visibility: this.state.isValid ? 'hidden' : 'visible'}}>Please enter values for each input!</p>
           </div>
-          <Link to='/movies'><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
+          <Link to={this.state.isValid ? '/movies' : '/'}><button className="user-submit-btn" type="submit" onClick={this.handleFormSubmit}>ENTER</button></Link>
         </form>
       </div>
       )

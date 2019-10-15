@@ -1,3 +1,7 @@
+.form-p {
+  color: #FFFFFF;
+  font-size: 1rem;
+}
 
 .user_profile-div {
   display:flex; 
@@ -8,6 +12,7 @@
   background-color: #F0FFFF;
   position:relative;
 }
+
 .user_form {
   display: flex;
   flex-direction: column;
@@ -27,22 +32,27 @@
   display:flex;
   flex-direction: row;
 }
+.user_radio-btn-div{
+  position:relative;
+  top: 115px;
+  left: -11px;
+}
 .user_radio-input {
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;
-     display: inline-block;
-     position: relative;
-     background-color: #f1f1f1;
-     color: #666;
-     top: 10px;
-     height: 30px;
-     width: 30px;
-     border: 0;
-     border-radius: 50px;
-     cursor: pointer;     
-     margin-right: 7px;
-     outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #f1f1f1;
+  color: #666;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;     
+  margin-right: 7px;
+  outline: none;
 }
 
 .user_radio-input:checked::before {
@@ -108,8 +118,8 @@
 
 .user_radio-title {
   position: absolute;
-  right: 128px;
-  top: 277px;
+  right: 78px;
+  top: 268px;
   width: 217px;
   font-weight: 700;
 }
@@ -121,7 +131,7 @@
 
 .user_quote-label {
   position: absolute;
-  bottom: -20px;
+  bottom: -12px;
   right: -30px;
   width: 160px;
   font-weight: 700;
