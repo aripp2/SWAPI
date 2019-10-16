@@ -20,7 +20,7 @@ As students at Turing School of Software & Design, we were assigned to a one wee
 - Wireframed
 
 ## Screenshots
-[Landing Page](<img width="1209" alt="Screen Shot 2019-10-15 at 5 16 32 PM" src="https://user-images.githubusercontent.com/49652149/66936477-01f25800-effb-11e9-806e-13b542958c14.png">)
+[Landing Page]<img width="1209" alt="Screen Shot 2019-10-15 at 5 16 32 PM" src="https://user-images.githubusercontent.com/49652149/66936477-01f25800-effb-11e9-806e-13b542958c14.png">
 
 [Movie Page](<img width="1425" alt="Screen Shot 2019-10-15 at 5 18 52 PM" src="https://user-images.githubusercontent.com/49652149/66936488-0585df00-effb-11e9-8c81-f2aedf3cd146.png">)
 
